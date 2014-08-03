@@ -1,12 +1,12 @@
 //
-//  UIImage+Extension.m
+//  UIImage+BAExtension.m
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/7/14.
 //  Copyright (c) 2014 ByteApps. All rights reserved.
 //
 
-#import "UIImage+Extension.h"
+#import "UIImage+BAExtension.h"
 
 @implementation UIImage (BAExtension)
 

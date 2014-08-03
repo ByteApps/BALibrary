@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Macros.h"
+#import "BAMacros.h"
 #import "BAExtensions.h"
-#import "Conversions.h"
+#import "BAConversions.h"

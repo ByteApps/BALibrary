@@ -1,5 +1,5 @@
 //
-//  Conversions.c
+//  Distance+BAConversions.c
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 6/27/14.
@@ -7,7 +7,7 @@
 //
 
 
-#include "Distance+Conversion.h"
+#include "Distance+BAConversion.h"
 
 #define MeterToMileMultiplier (0.000621371192)
 #define MeterToYardMultiplier (1.0936)

@@ -1,5 +1,5 @@
 //
-//  CLLocation+Extension.m
+//  CLLocation+BAExtension.m
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/7/14.

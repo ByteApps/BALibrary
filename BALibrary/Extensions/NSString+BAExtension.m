@@ -1,12 +1,13 @@
 //
-//  NSString+Extension.m
+//  NSString+BAExtension.m
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/8/14.
 //  Copyright (c) 2014 ByteApps. All rights reserved.
 //
 
-#import "NSString+Extension.h"
+#import "NSString+BAExtension.h"
+#import "NSData+BAExtension.h"
 
 @implementation NSString (BAExtension)
 

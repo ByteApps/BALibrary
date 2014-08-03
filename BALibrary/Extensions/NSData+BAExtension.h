@@ -1,5 +1,5 @@
 //
-//  NSData+Extension.h
+//  NSData+BAExtension.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/8/14.

@@ -1,5 +1,5 @@
 //
-//  UIButton+Extension.h
+//  UIButton+BAExtension.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/10/14.

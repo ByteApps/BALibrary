@@ -9,12 +9,12 @@
 #ifndef BALibrary_BAExtensions_h
 #define BALibrary_BAExtensions_h
 
-#import "CLLocation+Extension.h"
-#import "MKMapView+Extension.h"
-#import "NSData+Extension.h"
-#import "NSString+Extension.h"
-#import "UIButton+Extension.h"
-#import "UIImage+Extension.h"
+#import "CLLocation+BAExtension.h"
+#import "MKMapView+BAExtension.h"
+#import "NSData+BAExtension.h"
+#import "NSString+BAExtension.h"
+#import "UIButton+BAExtension.h"
+#import "UIImage+BAExtension.h"
 #import "BAInputAlert.h"
 
 #endif

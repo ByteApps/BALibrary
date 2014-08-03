@@ -1,5 +1,5 @@
 //
-//  Defaults.h
+//  BADefaults.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 8/2/14.

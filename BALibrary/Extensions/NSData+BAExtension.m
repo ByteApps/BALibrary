@@ -1,5 +1,5 @@
 //
-//  NSData+Extension.m
+//  NSData+BAExtension.m
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/8/14.
@@ -8,7 +8,7 @@
 //Reference: https://github.com/alexeypro/EncryptDecrypt/blob/master/NSData%2BAESCrypt.m
 
 
-#import "NSData+Extension.h"
+#import "NSData+BAExtension.h"
 #import <CommonCrypto/CommonCryptor.h>
 
 @implementation NSData (BAExtension)

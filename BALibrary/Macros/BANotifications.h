@@ -1,5 +1,5 @@
 //
-//  Notifications.h
+//  BANotifications.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 8/2/14.

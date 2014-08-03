@@ -1,5 +1,5 @@
 //
-//  Conversions.h
+//  Distance+BAConversions.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 6/27/14.

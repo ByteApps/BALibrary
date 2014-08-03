@@ -1,5 +1,5 @@
 //
-//  Conversions.h
+//  BAConversions.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 8/2/14.
@@ -9,6 +9,6 @@
 #ifndef BALibrary_Conversions_h
 #define BALibrary_Conversions_h
 
-#import "Distance+Conversion.h"
+#import "Distance+BAConversion.h"
 
 #endif

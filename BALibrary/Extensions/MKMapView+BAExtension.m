@@ -1,12 +1,12 @@
 //
-//  MKMapView+Extension.m
+//  MKMapView+BAExtension.m
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 7/1/14.
 //  Copyright (c) 2014 ByteApps. All rights reserved.
 //
 
-#import "MKMapView+Extension.h"
+#import "MKMapView+BAExtension.h"
 
 @implementation MKMapView (BAExtension)
 

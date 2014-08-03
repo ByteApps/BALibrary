@@ -1,5 +1,5 @@
 //
-//  Macros.h
+//  BAMacros.h
 //  BALibrary
 //
 //  Created by Salvador Guerrero on 8/2/14.
@@ -9,9 +9,9 @@
 #ifndef BALibrary_Macros_h
 #define BALibrary_Macros_h
 
-#import "Alias.h"
-#import "Singleton.h"
-#import "Notifications.h"
-#import "Defaults.h"
+#import "BAAlias.h"
+#import "BASingleton.h"
+#import "BANotifications.h"
+#import "BADefaults.h"
 
 #endif

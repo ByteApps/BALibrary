@@ -17,28 +17,28 @@
 		B902993E198E06C3003B250E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B902993C198E06C3003B250E /* InfoPlist.strings */; };
 		B9029940198E06C3003B250E /* BALibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B902993F198E06C3003B250E /* BALibraryTests.m */; };
 		B902995B198E0702003B250E /* BAInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B902994C198E0702003B250E /* BAInputAlert.m */; };
-		B902995C198E0702003B250E /* CLLocation+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B902994E198E0702003B250E /* CLLocation+Extension.m */; };
-		B902995D198E0702003B250E /* MKMapView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029950198E0702003B250E /* MKMapView+Extension.m */; };
-		B902995E198E0702003B250E /* NSData+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029952198E0702003B250E /* NSData+Extension.m */; };
-		B902995F198E0702003B250E /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029954198E0702003B250E /* NSString+Extension.m */; };
-		B9029961198E0702003B250E /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029958198E0702003B250E /* UIButton+Extension.m */; };
-		B9029962198E0702003B250E /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B902995A198E0702003B250E /* UIImage+Extension.m */; };
-		B9029969198E0A54003B250E /* Distance+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029968198E0A54003B250E /* Distance+Conversion.m */; };
-		B9029971198E0FE2003B250E /* Conversions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996A198E0A89003B250E /* Conversions.h */; };
-		B9029972198E0FE2003B250E /* Distance+Conversion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029967198E0A54003B250E /* Distance+Conversion.h */; };
+		B902995C198E0702003B250E /* CLLocation+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B902994E198E0702003B250E /* CLLocation+BAExtension.m */; };
+		B902995D198E0702003B250E /* MKMapView+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029950198E0702003B250E /* MKMapView+BAExtension.m */; };
+		B902995E198E0702003B250E /* NSData+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029952198E0702003B250E /* NSData+BAExtension.m */; };
+		B902995F198E0702003B250E /* NSString+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029954198E0702003B250E /* NSString+BAExtension.m */; };
+		B9029961198E0702003B250E /* UIButton+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029958198E0702003B250E /* UIButton+BAExtension.m */; };
+		B9029962198E0702003B250E /* UIImage+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B902995A198E0702003B250E /* UIImage+BAExtension.m */; };
+		B9029969198E0A54003B250E /* Distance+BAConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029968198E0A54003B250E /* Distance+BAConversion.m */; };
+		B9029971198E0FE2003B250E /* BAConversions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996A198E0A89003B250E /* BAConversions.h */; };
+		B9029972198E0FE2003B250E /* Distance+BAConversion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029967198E0A54003B250E /* Distance+BAConversion.h */; };
 		B9029973198E0FE2003B250E /* BAExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994A198E0702003B250E /* BAExtensions.h */; };
 		B9029974198E0FE2003B250E /* BAInputAlert.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994B198E0702003B250E /* BAInputAlert.h */; };
-		B9029975198E0FE2003B250E /* CLLocation+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994D198E0702003B250E /* CLLocation+Extension.h */; };
-		B9029976198E0FE2003B250E /* MKMapView+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994F198E0702003B250E /* MKMapView+Extension.h */; };
-		B9029977198E0FE2003B250E /* NSData+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029951198E0702003B250E /* NSData+Extension.h */; };
-		B9029978198E0FE2003B250E /* NSString+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029953198E0702003B250E /* NSString+Extension.h */; };
-		B9029979198E0FE2003B250E /* UIButton+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029957198E0702003B250E /* UIButton+Extension.h */; };
-		B902997A198E0FE2003B250E /* UIImage+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029959198E0702003B250E /* UIImage+Extension.h */; };
-		B902997B198E0FE2003B250E /* Macros.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996C198E0B5B003B250E /* Macros.h */; };
-		B902997C198E0FE2003B250E /* Alias.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996D198E0B75003B250E /* Alias.h */; };
-		B902997D198E0FE2003B250E /* Singleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996E198E0BA4003B250E /* Singleton.h */; };
-		B902997E198E0FE2003B250E /* Notifications.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996F198E0C03003B250E /* Notifications.h */; };
-		B902997F198E0FE2003B250E /* Defaults.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029970198E0DC3003B250E /* Defaults.h */; };
+		B9029975198E0FE2003B250E /* CLLocation+BAExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994D198E0702003B250E /* CLLocation+BAExtension.h */; };
+		B9029976198E0FE2003B250E /* MKMapView+BAExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994F198E0702003B250E /* MKMapView+BAExtension.h */; };
+		B9029977198E0FE2003B250E /* NSData+BAExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029951198E0702003B250E /* NSData+BAExtension.h */; };
+		B9029978198E0FE2003B250E /* NSString+BAExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029953198E0702003B250E /* NSString+BAExtension.h */; };
+		B9029979198E0FE2003B250E /* UIButton+BAExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029957198E0702003B250E /* UIButton+BAExtension.h */; };
+		B902997A198E0FE2003B250E /* UIImage+BAExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029959198E0702003B250E /* UIImage+BAExtension.h */; };
+		B902997B198E0FE2003B250E /* BAMacros.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996C198E0B5B003B250E /* BAMacros.h */; };
+		B902997C198E0FE2003B250E /* BAAlias.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996D198E0B75003B250E /* BAAlias.h */; };
+		B902997D198E0FE2003B250E /* BASingleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996E198E0BA4003B250E /* BASingleton.h */; };
+		B902997E198E0FE2003B250E /* BANotifications.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996F198E0C03003B250E /* BANotifications.h */; };
+		B902997F198E0FE2003B250E /* BADefaults.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029970198E0DC3003B250E /* BADefaults.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,21 +58,21 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				B9029971198E0FE2003B250E /* Conversions.h in CopyFiles */,
-				B9029972198E0FE2003B250E /* Distance+Conversion.h in CopyFiles */,
+				B9029971198E0FE2003B250E /* BAConversions.h in CopyFiles */,
+				B9029972198E0FE2003B250E /* Distance+BAConversion.h in CopyFiles */,
 				B9029973198E0FE2003B250E /* BAExtensions.h in CopyFiles */,
 				B9029974198E0FE2003B250E /* BAInputAlert.h in CopyFiles */,
-				B9029975198E0FE2003B250E /* CLLocation+Extension.h in CopyFiles */,
-				B9029976198E0FE2003B250E /* MKMapView+Extension.h in CopyFiles */,
-				B9029977198E0FE2003B250E /* NSData+Extension.h in CopyFiles */,
-				B9029978198E0FE2003B250E /* NSString+Extension.h in CopyFiles */,
-				B9029979198E0FE2003B250E /* UIButton+Extension.h in CopyFiles */,
-				B902997A198E0FE2003B250E /* UIImage+Extension.h in CopyFiles */,
-				B902997B198E0FE2003B250E /* Macros.h in CopyFiles */,
-				B902997C198E0FE2003B250E /* Alias.h in CopyFiles */,
-				B902997D198E0FE2003B250E /* Singleton.h in CopyFiles */,
-				B902997E198E0FE2003B250E /* Notifications.h in CopyFiles */,
-				B902997F198E0FE2003B250E /* Defaults.h in CopyFiles */,
+				B9029975198E0FE2003B250E /* CLLocation+BAExtension.h in CopyFiles */,
+				B9029976198E0FE2003B250E /* MKMapView+BAExtension.h in CopyFiles */,
+				B9029977198E0FE2003B250E /* NSData+BAExtension.h in CopyFiles */,
+				B9029978198E0FE2003B250E /* NSString+BAExtension.h in CopyFiles */,
+				B9029979198E0FE2003B250E /* UIButton+BAExtension.h in CopyFiles */,
+				B902997A198E0FE2003B250E /* UIImage+BAExtension.h in CopyFiles */,
+				B902997B198E0FE2003B250E /* BAMacros.h in CopyFiles */,
+				B902997C198E0FE2003B250E /* BAAlias.h in CopyFiles */,
+				B902997D198E0FE2003B250E /* BASingleton.h in CopyFiles */,
+				B902997E198E0FE2003B250E /* BANotifications.h in CopyFiles */,
+				B902997F198E0FE2003B250E /* BADefaults.h in CopyFiles */,
 				B9029929198E06C3003B250E /* BALibrary.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,26 +94,26 @@
 		B902994A198E0702003B250E /* BAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAExtensions.h; sourceTree = "<group>"; };
 		B902994B198E0702003B250E /* BAInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAInputAlert.h; sourceTree = "<group>"; };
 		B902994C198E0702003B250E /* BAInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAInputAlert.m; sourceTree = "<group>"; };
-		B902994D198E0702003B250E /* CLLocation+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Extension.h"; sourceTree = "<group>"; };
-		B902994E198E0702003B250E /* CLLocation+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Extension.m"; sourceTree = "<group>"; };
-		B902994F198E0702003B250E /* MKMapView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+Extension.h"; sourceTree = "<group>"; };
-		B9029950198E0702003B250E /* MKMapView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Extension.m"; sourceTree = "<group>"; };
-		B9029951198E0702003B250E /* NSData+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extension.h"; sourceTree = "<group>"; };
-		B9029952198E0702003B250E /* NSData+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extension.m"; sourceTree = "<group>"; };
-		B9029953198E0702003B250E /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
-		B9029954198E0702003B250E /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		B9029957198E0702003B250E /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
-		B9029958198E0702003B250E /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
-		B9029959198E0702003B250E /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
-		B902995A198E0702003B250E /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
-		B9029967198E0A54003B250E /* Distance+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Distance+Conversion.h"; sourceTree = "<group>"; };
-		B9029968198E0A54003B250E /* Distance+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Distance+Conversion.m"; sourceTree = "<group>"; };
-		B902996A198E0A89003B250E /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
-		B902996C198E0B5B003B250E /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = Macros/Macros.h; sourceTree = "<group>"; };
-		B902996D198E0B75003B250E /* Alias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Alias.h; path = Macros/Alias.h; sourceTree = "<group>"; };
-		B902996E198E0BA4003B250E /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = Macros/Singleton.h; sourceTree = "<group>"; };
-		B902996F198E0C03003B250E /* Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Notifications.h; path = Macros/Notifications.h; sourceTree = "<group>"; };
-		B9029970198E0DC3003B250E /* Defaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Defaults.h; path = Macros/Defaults.h; sourceTree = "<group>"; };
+		B902994D198E0702003B250E /* CLLocation+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+BAExtension.h"; sourceTree = "<group>"; };
+		B902994E198E0702003B250E /* CLLocation+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+BAExtension.m"; sourceTree = "<group>"; };
+		B902994F198E0702003B250E /* MKMapView+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+BAExtension.h"; sourceTree = "<group>"; };
+		B9029950198E0702003B250E /* MKMapView+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+BAExtension.m"; sourceTree = "<group>"; };
+		B9029951198E0702003B250E /* NSData+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BAExtension.h"; sourceTree = "<group>"; };
+		B9029952198E0702003B250E /* NSData+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BAExtension.m"; sourceTree = "<group>"; };
+		B9029953198E0702003B250E /* NSString+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BAExtension.h"; sourceTree = "<group>"; };
+		B9029954198E0702003B250E /* NSString+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BAExtension.m"; sourceTree = "<group>"; };
+		B9029957198E0702003B250E /* UIButton+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BAExtension.h"; sourceTree = "<group>"; };
+		B9029958198E0702003B250E /* UIButton+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BAExtension.m"; sourceTree = "<group>"; };
+		B9029959198E0702003B250E /* UIImage+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BAExtension.h"; sourceTree = "<group>"; };
+		B902995A198E0702003B250E /* UIImage+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BAExtension.m"; sourceTree = "<group>"; };
+		B9029967198E0A54003B250E /* Distance+BAConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Distance+BAConversion.h"; sourceTree = "<group>"; };
+		B9029968198E0A54003B250E /* Distance+BAConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Distance+BAConversion.m"; sourceTree = "<group>"; };
+		B902996A198E0A89003B250E /* BAConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAConversions.h; sourceTree = "<group>"; };
+		B902996C198E0B5B003B250E /* BAMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BAMacros.h; path = Macros/BAMacros.h; sourceTree = "<group>"; };
+		B902996D198E0B75003B250E /* BAAlias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BAAlias.h; path = Macros/BAAlias.h; sourceTree = "<group>"; };
+		B902996E198E0BA4003B250E /* BASingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BASingleton.h; path = Macros/BASingleton.h; sourceTree = "<group>"; };
+		B902996F198E0C03003B250E /* BANotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BANotifications.h; path = Macros/BANotifications.h; sourceTree = "<group>"; };
+		B9029970198E0DC3003B250E /* BADefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BADefaults.h; path = Macros/BADefaults.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,18 +213,18 @@
 				B902994A198E0702003B250E /* BAExtensions.h */,
 				B902994B198E0702003B250E /* BAInputAlert.h */,
 				B902994C198E0702003B250E /* BAInputAlert.m */,
-				B902994D198E0702003B250E /* CLLocation+Extension.h */,
-				B902994E198E0702003B250E /* CLLocation+Extension.m */,
-				B902994F198E0702003B250E /* MKMapView+Extension.h */,
-				B9029950198E0702003B250E /* MKMapView+Extension.m */,
-				B9029951198E0702003B250E /* NSData+Extension.h */,
-				B9029952198E0702003B250E /* NSData+Extension.m */,
-				B9029953198E0702003B250E /* NSString+Extension.h */,
-				B9029954198E0702003B250E /* NSString+Extension.m */,
-				B9029957198E0702003B250E /* UIButton+Extension.h */,
-				B9029958198E0702003B250E /* UIButton+Extension.m */,
-				B9029959198E0702003B250E /* UIImage+Extension.h */,
-				B902995A198E0702003B250E /* UIImage+Extension.m */,
+				B902994D198E0702003B250E /* CLLocation+BAExtension.h */,
+				B902994E198E0702003B250E /* CLLocation+BAExtension.m */,
+				B902994F198E0702003B250E /* MKMapView+BAExtension.h */,
+				B9029950198E0702003B250E /* MKMapView+BAExtension.m */,
+				B9029951198E0702003B250E /* NSData+BAExtension.h */,
+				B9029952198E0702003B250E /* NSData+BAExtension.m */,
+				B9029953198E0702003B250E /* NSString+BAExtension.h */,
+				B9029954198E0702003B250E /* NSString+BAExtension.m */,
+				B9029957198E0702003B250E /* UIButton+BAExtension.h */,
+				B9029958198E0702003B250E /* UIButton+BAExtension.m */,
+				B9029959198E0702003B250E /* UIImage+BAExtension.h */,
+				B902995A198E0702003B250E /* UIImage+BAExtension.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,9 +232,9 @@
 		B9029966198E0A54003B250E /* Conversions */ = {
 			isa = PBXGroup;
 			children = (
-				B902996A198E0A89003B250E /* Conversions.h */,
-				B9029967198E0A54003B250E /* Distance+Conversion.h */,
-				B9029968198E0A54003B250E /* Distance+Conversion.m */,
+				B902996A198E0A89003B250E /* BAConversions.h */,
+				B9029967198E0A54003B250E /* Distance+BAConversion.h */,
+				B9029968198E0A54003B250E /* Distance+BAConversion.m */,
 			);
 			path = Conversions;
 			sourceTree = "<group>";
@@ -242,11 +242,11 @@
 		B902996B198E0B2C003B250E /* Macros */ = {
 			isa = PBXGroup;
 			children = (
-				B902996C198E0B5B003B250E /* Macros.h */,
-				B902996D198E0B75003B250E /* Alias.h */,
-				B902996E198E0BA4003B250E /* Singleton.h */,
-				B902996F198E0C03003B250E /* Notifications.h */,
-				B9029970198E0DC3003B250E /* Defaults.h */,
+				B902996C198E0B5B003B250E /* BAMacros.h */,
+				B902996D198E0B75003B250E /* BAAlias.h */,
+				B902996E198E0BA4003B250E /* BASingleton.h */,
+				B902996F198E0C03003B250E /* BANotifications.h */,
+				B9029970198E0DC3003B250E /* BADefaults.h */,
 			);
 			name = Macros;
 			sourceTree = "<group>";
@@ -333,14 +333,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B902995B198E0702003B250E /* BAInputAlert.m in Sources */,
-				B9029961198E0702003B250E /* UIButton+Extension.m in Sources */,
-				B902995F198E0702003B250E /* NSString+Extension.m in Sources */,
-				B9029969198E0A54003B250E /* Distance+Conversion.m in Sources */,
-				B902995D198E0702003B250E /* MKMapView+Extension.m in Sources */,
+				B9029961198E0702003B250E /* UIButton+BAExtension.m in Sources */,
+				B902995F198E0702003B250E /* NSString+BAExtension.m in Sources */,
+				B9029969198E0A54003B250E /* Distance+BAConversion.m in Sources */,
+				B902995D198E0702003B250E /* MKMapView+BAExtension.m in Sources */,
 				B902992B198E06C3003B250E /* BALibrary.m in Sources */,
-				B9029962198E0702003B250E /* UIImage+Extension.m in Sources */,
-				B902995C198E0702003B250E /* CLLocation+Extension.m in Sources */,
-				B902995E198E0702003B250E /* NSData+Extension.m in Sources */,
+				B9029962198E0702003B250E /* UIImage+BAExtension.m in Sources */,
+				B902995C198E0702003B250E /* CLLocation+BAExtension.m in Sources */,
+				B902995E198E0702003B250E /* NSData+BAExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +523,7 @@
 				B9029945198E06C3003B250E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9029946198E06C3003B250E /* Build configuration list for PBXNativeTarget "BALibraryTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +532,7 @@
 				B9029948198E06C3003B250E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
