@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9029924198E06C3003B250E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9029923198E06C3003B250E /* Foundation.framework */; };
+		B9029929198E06C3003B250E /* BALibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029928198E06C3003B250E /* BALibrary.h */; };
+		B902992B198E06C3003B250E /* BALibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B902992A198E06C3003B250E /* BALibrary.m */; };
+		B9029932198E06C3003B250E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9029931198E06C3003B250E /* XCTest.framework */; };
+		B9029933198E06C3003B250E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9029923198E06C3003B250E /* Foundation.framework */; };
+		B9029935198E06C3003B250E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9029934198E06C3003B250E /* UIKit.framework */; };
+		B9029938198E06C3003B250E /* libBALibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9029920198E06C3003B250E /* libBALibrary.a */; };
+		B902993E198E06C3003B250E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B902993C198E06C3003B250E /* InfoPlist.strings */; };
+		B9029940198E06C3003B250E /* BALibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B902993F198E06C3003B250E /* BALibraryTests.m */; };
+		B902995B198E0702003B250E /* BAInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B902994C198E0702003B250E /* BAInputAlert.m */; };
+		B902995C198E0702003B250E /* CLLocation+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B902994E198E0702003B250E /* CLLocation+Extension.m */; };
+		B902995D198E0702003B250E /* MKMapView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029950198E0702003B250E /* MKMapView+Extension.m */; };
+		B902995E198E0702003B250E /* NSData+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029952198E0702003B250E /* NSData+Extension.m */; };
+		B902995F198E0702003B250E /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029954198E0702003B250E /* NSString+Extension.m */; };
+		B9029961198E0702003B250E /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029958198E0702003B250E /* UIButton+Extension.m */; };
+		B9029962198E0702003B250E /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B902995A198E0702003B250E /* UIImage+Extension.m */; };
+		B9029969198E0A54003B250E /* Distance+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = B9029968198E0A54003B250E /* Distance+Conversion.m */; };
+		B9029971198E0FE2003B250E /* Conversions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996A198E0A89003B250E /* Conversions.h */; };
+		B9029972198E0FE2003B250E /* Distance+Conversion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029967198E0A54003B250E /* Distance+Conversion.h */; };
+		B9029973198E0FE2003B250E /* BAExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994A198E0702003B250E /* BAExtensions.h */; };
+		B9029974198E0FE2003B250E /* BAInputAlert.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994B198E0702003B250E /* BAInputAlert.h */; };
+		B9029975198E0FE2003B250E /* CLLocation+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994D198E0702003B250E /* CLLocation+Extension.h */; };
+		B9029976198E0FE2003B250E /* MKMapView+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902994F198E0702003B250E /* MKMapView+Extension.h */; };
+		B9029977198E0FE2003B250E /* NSData+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029951198E0702003B250E /* NSData+Extension.h */; };
+		B9029978198E0FE2003B250E /* NSString+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029953198E0702003B250E /* NSString+Extension.h */; };
+		B9029979198E0FE2003B250E /* UIButton+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029957198E0702003B250E /* UIButton+Extension.h */; };
+		B902997A198E0FE2003B250E /* UIImage+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029959198E0702003B250E /* UIImage+Extension.h */; };
+		B902997B198E0FE2003B250E /* Macros.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996C198E0B5B003B250E /* Macros.h */; };
+		B902997C198E0FE2003B250E /* Alias.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996D198E0B75003B250E /* Alias.h */; };
+		B902997D198E0FE2003B250E /* Singleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996E198E0BA4003B250E /* Singleton.h */; };
+		B902997E198E0FE2003B250E /* Notifications.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996F198E0C03003B250E /* Notifications.h */; };
+		B902997F198E0FE2003B250E /* Defaults.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029970198E0DC3003B250E /* Defaults.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9029936198E06C3003B250E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9029918198E06C3003B250E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B902991F198E06C3003B250E;
+			remoteInfo = BALibrary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B902991E198E06C3003B250E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				B9029971198E0FE2003B250E /* Conversions.h in CopyFiles */,
+				B9029972198E0FE2003B250E /* Distance+Conversion.h in CopyFiles */,
+				B9029973198E0FE2003B250E /* BAExtensions.h in CopyFiles */,
+				B9029974198E0FE2003B250E /* BAInputAlert.h in CopyFiles */,
+				B9029975198E0FE2003B250E /* CLLocation+Extension.h in CopyFiles */,
+				B9029976198E0FE2003B250E /* MKMapView+Extension.h in CopyFiles */,
+				B9029977198E0FE2003B250E /* NSData+Extension.h in CopyFiles */,
+				B9029978198E0FE2003B250E /* NSString+Extension.h in CopyFiles */,
+				B9029979198E0FE2003B250E /* UIButton+Extension.h in CopyFiles */,
+				B902997A198E0FE2003B250E /* UIImage+Extension.h in CopyFiles */,
+				B902997B198E0FE2003B250E /* Macros.h in CopyFiles */,
+				B902997C198E0FE2003B250E /* Alias.h in CopyFiles */,
+				B902997D198E0FE2003B250E /* Singleton.h in CopyFiles */,
+				B902997E198E0FE2003B250E /* Notifications.h in CopyFiles */,
+				B902997F198E0FE2003B250E /* Defaults.h in CopyFiles */,
+				B9029929198E06C3003B250E /* BALibrary.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B9029920198E06C3003B250E /* libBALibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBALibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9029923198E06C3003B250E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B9029927198E06C3003B250E /* BALibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BALibrary-Prefix.pch"; sourceTree = "<group>"; };
+		B9029928198E06C3003B250E /* BALibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BALibrary.h; sourceTree = "<group>"; };
+		B902992A198E06C3003B250E /* BALibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BALibrary.m; sourceTree = "<group>"; };
+		B9029930198E06C3003B250E /* BALibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BALibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9029931198E06C3003B250E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B9029934198E06C3003B250E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B902993B198E06C3003B250E /* BALibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BALibraryTests-Info.plist"; sourceTree = "<group>"; };
+		B902993D198E06C3003B250E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B902993F198E06C3003B250E /* BALibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BALibraryTests.m; sourceTree = "<group>"; };
+		B902994A198E0702003B250E /* BAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAExtensions.h; sourceTree = "<group>"; };
+		B902994B198E0702003B250E /* BAInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAInputAlert.h; sourceTree = "<group>"; };
+		B902994C198E0702003B250E /* BAInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAInputAlert.m; sourceTree = "<group>"; };
+		B902994D198E0702003B250E /* CLLocation+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Extension.h"; sourceTree = "<group>"; };
+		B902994E198E0702003B250E /* CLLocation+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Extension.m"; sourceTree = "<group>"; };
+		B902994F198E0702003B250E /* MKMapView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+Extension.h"; sourceTree = "<group>"; };
+		B9029950198E0702003B250E /* MKMapView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Extension.m"; sourceTree = "<group>"; };
+		B9029951198E0702003B250E /* NSData+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extension.h"; sourceTree = "<group>"; };
+		B9029952198E0702003B250E /* NSData+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extension.m"; sourceTree = "<group>"; };
+		B9029953198E0702003B250E /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		B9029954198E0702003B250E /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		B9029957198E0702003B250E /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		B9029958198E0702003B250E /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		B9029959198E0702003B250E /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		B902995A198E0702003B250E /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		B9029967198E0A54003B250E /* Distance+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Distance+Conversion.h"; sourceTree = "<group>"; };
+		B9029968198E0A54003B250E /* Distance+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Distance+Conversion.m"; sourceTree = "<group>"; };
+		B902996A198E0A89003B250E /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
+		B902996C198E0B5B003B250E /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = Macros/Macros.h; sourceTree = "<group>"; };
+		B902996D198E0B75003B250E /* Alias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Alias.h; path = Macros/Alias.h; sourceTree = "<group>"; };
+		B902996E198E0BA4003B250E /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = Macros/Singleton.h; sourceTree = "<group>"; };
+		B902996F198E0C03003B250E /* Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Notifications.h; path = Macros/Notifications.h; sourceTree = "<group>"; };
+		B9029970198E0DC3003B250E /* Defaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Defaults.h; path = Macros/Defaults.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B902991D198E06C3003B250E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9029924198E06C3003B250E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B902992D198E06C3003B250E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9029938198E06C3003B250E /* libBALibrary.a in Frameworks */,
+				B9029932198E06C3003B250E /* XCTest.framework in Frameworks */,
+				B9029935198E06C3003B250E /* UIKit.framework in Frameworks */,
+				B9029933198E06C3003B250E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9029917198E06C3003B250E = {
+			isa = PBXGroup;
+			children = (
+				B9029925198E06C3003B250E /* BALibrary */,
+				B9029939198E06C3003B250E /* BALibraryTests */,
+				B9029922198E06C3003B250E /* Frameworks */,
+				B9029921198E06C3003B250E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9029921198E06C3003B250E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9029920198E06C3003B250E /* libBALibrary.a */,
+				B9029930198E06C3003B250E /* BALibraryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9029922198E06C3003B250E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9029923198E06C3003B250E /* Foundation.framework */,
+				B9029931198E06C3003B250E /* XCTest.framework */,
+				B9029934198E06C3003B250E /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9029925198E06C3003B250E /* BALibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B9029928198E06C3003B250E /* BALibrary.h */,
+				B902992A198E06C3003B250E /* BALibrary.m */,
+				B9029966198E0A54003B250E /* Conversions */,
+				B9029949198E0702003B250E /* Extensions */,
+				B902996B198E0B2C003B250E /* Macros */,
+				B9029926198E06C3003B250E /* Supporting Files */,
+			);
+			path = BALibrary;
+			sourceTree = "<group>";
+		};
+		B9029926198E06C3003B250E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9029927198E06C3003B250E /* BALibrary-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9029939198E06C3003B250E /* BALibraryTests */ = {
+			isa = PBXGroup;
+			children = (
+				B902993F198E06C3003B250E /* BALibraryTests.m */,
+				B902993A198E06C3003B250E /* Supporting Files */,
+			);
+			path = BALibraryTests;
+			sourceTree = "<group>";
+		};
+		B902993A198E06C3003B250E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B902993B198E06C3003B250E /* BALibraryTests-Info.plist */,
+				B902993C198E06C3003B250E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9029949198E0702003B250E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B902994A198E0702003B250E /* BAExtensions.h */,
+				B902994B198E0702003B250E /* BAInputAlert.h */,
+				B902994C198E0702003B250E /* BAInputAlert.m */,
+				B902994D198E0702003B250E /* CLLocation+Extension.h */,
+				B902994E198E0702003B250E /* CLLocation+Extension.m */,
+				B902994F198E0702003B250E /* MKMapView+Extension.h */,
+				B9029950198E0702003B250E /* MKMapView+Extension.m */,
+				B9029951198E0702003B250E /* NSData+Extension.h */,
+				B9029952198E0702003B250E /* NSData+Extension.m */,
+				B9029953198E0702003B250E /* NSString+Extension.h */,
+				B9029954198E0702003B250E /* NSString+Extension.m */,
+				B9029957198E0702003B250E /* UIButton+Extension.h */,
+				B9029958198E0702003B250E /* UIButton+Extension.m */,
+				B9029959198E0702003B250E /* UIImage+Extension.h */,
+				B902995A198E0702003B250E /* UIImage+Extension.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B9029966198E0A54003B250E /* Conversions */ = {
+			isa = PBXGroup;
+			children = (
+				B902996A198E0A89003B250E /* Conversions.h */,
+				B9029967198E0A54003B250E /* Distance+Conversion.h */,
+				B9029968198E0A54003B250E /* Distance+Conversion.m */,
+			);
+			path = Conversions;
+			sourceTree = "<group>";
+		};
+		B902996B198E0B2C003B250E /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				B902996C198E0B5B003B250E /* Macros.h */,
+				B902996D198E0B75003B250E /* Alias.h */,
+				B902996E198E0BA4003B250E /* Singleton.h */,
+				B902996F198E0C03003B250E /* Notifications.h */,
+				B9029970198E0DC3003B250E /* Defaults.h */,
+			);
+			name = Macros;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B902991F198E06C3003B250E /* BALibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9029943198E06C3003B250E /* Build configuration list for PBXNativeTarget "BALibrary" */;
+			buildPhases = (
+				B902991C198E06C3003B250E /* Sources */,
+				B902991D198E06C3003B250E /* Frameworks */,
+				B902991E198E06C3003B250E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BALibrary;
+			productName = BALibrary;
+			productReference = B9029920198E06C3003B250E /* libBALibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B902992F198E06C3003B250E /* BALibraryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9029946198E06C3003B250E /* Build configuration list for PBXNativeTarget "BALibraryTests" */;
+			buildPhases = (
+				B902992C198E06C3003B250E /* Sources */,
+				B902992D198E06C3003B250E /* Frameworks */,
+				B902992E198E06C3003B250E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9029937198E06C3003B250E /* PBXTargetDependency */,
+			);
+			name = BALibraryTests;
+			productName = BALibraryTests;
+			productReference = B9029930198E06C3003B250E /* BALibraryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9029918198E06C3003B250E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ByteApps;
+			};
+			buildConfigurationList = B902991B198E06C3003B250E /* Build configuration list for PBXProject "BALibrary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B9029917198E06C3003B250E;
+			productRefGroup = B9029921198E06C3003B250E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B902991F198E06C3003B250E /* BALibrary */,
+				B902992F198E06C3003B250E /* BALibraryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B902992E198E06C3003B250E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B902993E198E06C3003B250E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B902991C198E06C3003B250E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B902995B198E0702003B250E /* BAInputAlert.m in Sources */,
+				B9029961198E0702003B250E /* UIButton+Extension.m in Sources */,
+				B902995F198E0702003B250E /* NSString+Extension.m in Sources */,
+				B9029969198E0A54003B250E /* Distance+Conversion.m in Sources */,
+				B902995D198E0702003B250E /* MKMapView+Extension.m in Sources */,
+				B902992B198E06C3003B250E /* BALibrary.m in Sources */,
+				B9029962198E0702003B250E /* UIImage+Extension.m in Sources */,
+				B902995C198E0702003B250E /* CLLocation+Extension.m in Sources */,
+				B902995E198E0702003B250E /* NSData+Extension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B902992C198E06C3003B250E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9029940198E06C3003B250E /* BALibraryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9029937198E06C3003B250E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B902991F198E06C3003B250E /* BALibrary */;
+			targetProxy = B9029936198E06C3003B250E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B902993C198E06C3003B250E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B902993D198E06C3003B250E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9029941198E06C3003B250E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B9029942198E06C3003B250E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9029944198E06C3003B250E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BALibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BALibrary/BALibrary-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B9029945198E06C3003B250E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BALibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BALibrary/BALibrary-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B9029947198E06C3003B250E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BALibrary/BALibrary-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BALibraryTests/BALibraryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B9029948198E06C3003B250E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BALibrary/BALibrary-Prefix.pch";
+				INFOPLIST_FILE = "BALibraryTests/BALibraryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B902991B198E06C3003B250E /* Build configuration list for PBXProject "BALibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9029941198E06C3003B250E /* Debug */,
+				B9029942198E06C3003B250E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9029943198E06C3003B250E /* Build configuration list for PBXNativeTarget "BALibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9029944198E06C3003B250E /* Debug */,
+				B9029945198E06C3003B250E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9029946198E06C3003B250E /* Build configuration list for PBXNativeTarget "BALibraryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9029947198E06C3003B250E /* Debug */,
+				B9029948198E06C3003B250E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9029918198E06C3003B250E /* Project object */;
+}
