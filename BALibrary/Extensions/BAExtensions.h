@@ -16,5 +16,6 @@
 #import "UIButton+BAExtension.h"
 #import "UIImage+BAExtension.h"
 #import "BAInputAlert.h"
+#import "NSOperationQueue+BAExtension.h"
 
 #endif

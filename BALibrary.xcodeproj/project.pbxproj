@@ -39,6 +39,7 @@
 		B902997D198E0FE2003B250E /* BASingleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996E198E0BA4003B250E /* BASingleton.h */; };
 		B902997E198E0FE2003B250E /* BANotifications.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B902996F198E0C03003B250E /* BANotifications.h */; };
 		B902997F198E0FE2003B250E /* BADefaults.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B9029970198E0DC3003B250E /* BADefaults.h */; };
+		B9D12C8E19908D6E00576BAF /* NSOperationQueue+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D12C8D19908D6E00576BAF /* NSOperationQueue+BAExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		B902996E198E0BA4003B250E /* BASingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BASingleton.h; path = Macros/BASingleton.h; sourceTree = "<group>"; };
 		B902996F198E0C03003B250E /* BANotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BANotifications.h; path = Macros/BANotifications.h; sourceTree = "<group>"; };
 		B9029970198E0DC3003B250E /* BADefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BADefaults.h; path = Macros/BADefaults.h; sourceTree = "<group>"; };
+		B9D12C8C19908D6E00576BAF /* NSOperationQueue+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+BAExtension.h"; sourceTree = "<group>"; };
+		B9D12C8D19908D6E00576BAF /* NSOperationQueue+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+BAExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,8 @@
 		B9029949198E0702003B250E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B9D12C8C19908D6E00576BAF /* NSOperationQueue+BAExtension.h */,
+				B9D12C8D19908D6E00576BAF /* NSOperationQueue+BAExtension.m */,
 				B902994A198E0702003B250E /* BAExtensions.h */,
 				B902994B198E0702003B250E /* BAInputAlert.h */,
 				B902994C198E0702003B250E /* BAInputAlert.m */,
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B902995B198E0702003B250E /* BAInputAlert.m in Sources */,
+				B9D12C8E19908D6E00576BAF /* NSOperationQueue+BAExtension.m in Sources */,
 				B9029961198E0702003B250E /* UIButton+BAExtension.m in Sources */,
 				B902995F198E0702003B250E /* NSString+BAExtension.m in Sources */,
 				B9029969198E0A54003B250E /* Distance+BAConversion.m in Sources */,
