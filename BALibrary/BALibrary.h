@@ -11,3 +11,4 @@
 #import "BAMacros.h"
 #import "BAExtensions.h"
 #import "BAConversions.h"
+#import "BAViews.h"
