@@ -200,6 +200,7 @@
 
     searchBarTextField.font = textField.font;
     searchBarTextField.clearButtonMode = textField.clearButtonMode;
+    searchBarTextField.text = textField.text;
 
     //confugure the search display controller
 
