@@ -54,6 +54,7 @@
 
 @implementation BASearchDisplayController
 {
+    UIView      *_searchBarSuperView;
     CGRect      _searchBarOriginFrame;
     CGRect      _searchBarFrame;
     UIView      *_headerView;
@@ -65,7 +66,7 @@
     [searchBar retain];
     [_searchBar release];
     _searchBar = searchBar;
-
+    _searchBarSuperView = searchBar.superview;
     _searchBarOriginFrame = searchBar.frame;
 }
 
@@ -126,9 +127,7 @@
 {
     [super viewWillDisappear:animated];
 
-    UIViewController *delegate = (id)_searchBar.viewController;
-
-    [delegate.view addSubview:_searchBar];
+    [_searchBarSuperView addSubview:_searchBar];
 
     //now restore _searchBar original position
 
@@ -142,13 +141,6 @@
     {
 
     }];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-
-
 }
 
 + (instancetype)searchDisplayControllerWithSearchBar:(BARealSearchBar *)searchBar
