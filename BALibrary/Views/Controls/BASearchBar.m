@@ -189,7 +189,8 @@
     BARealSearchBar *searchBar = [[[BARealSearchBar alloc] initWithFrame:textField.frame] autorelease];
     UITextField *searchBarTextField = searchBar.textField;
 
-    //set relevant properties.
+    //copy relevant properties.
+
     searchBar.tag = textField.tag;
     searchBar.viewController = (id)textField.delegate;
     searchBar.autoresizingMask = textField.autoresizingMask;
@@ -198,6 +199,7 @@
     //properties set directly into the TextField.
 
     searchBarTextField.font = textField.font;
+    searchBarTextField.clearButtonMode = textField.clearButtonMode;
 
     //confugure the search display controller
 
