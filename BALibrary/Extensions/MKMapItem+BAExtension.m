@@ -10,6 +10,11 @@
 
 @implementation MKMapItem (BAExtension)
 
+- (CLLocationCoordinate2D)coordinate
+{
+    return self.placemark.coordinate;
+}
+
 /*
  // MKPlacemark address dictionary properties
  @property (nonatomic, readonly) NSString *name; // eg. Apple Inc.
