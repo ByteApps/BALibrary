@@ -23,6 +23,10 @@
     + (className*)sharedInstance \
     { \
         return  _sharedInstance; \
-    }
+    } \
+    - (id)retain { return  _sharedInstance; } \
+    - (oneway void)release {} \
+    - (id)autorelease { return  _sharedInstance; } \
+    - (NSUInteger)retainCount { return NSUIntegerMax; }
 
 #endif
