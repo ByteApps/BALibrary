@@ -10,11 +10,9 @@
 #define BALibrary_Defaults_h
 
 #define declareEnumProperty(type, name) \
-    declareNotificationWithName(name); \
     @property (nonatomic, assign) type name
 
 #define defineApplicationSettingsEnumProperty(type, name, defaultValue) \
-    defineNotificationwithName(name) \
     @dynamic name; \
     - (type)name \
     { \
@@ -26,7 +24,23 @@
     { \
         [defaults setInteger:newValue forKey:@#name]; \
         [defaults synchronize]; \
-        [self post##name##ChangeNotificationWithObject:[NSNumber numberWithInteger:newValue]]; \
+    } \
+
+#define declareBoolProperty(name) \
+    @property (nonatomic, assign) BOOL name
+
+#define defineApplicationSettingsBoolProperty(name, defaultValue) \
+    @dynamic name; \
+    - (BOOL)name \
+    { \
+        id object = [defaults objectForKey:@#name]; \
+        if (!object) return defaultValue; \
+        return [object boolValue]; \
+    } \
+    - (void)set##name:(BOOL)newValue \
+    { \
+        [defaults setBool:newValue forKey:@#name]; \
+        [defaults synchronize]; \
     } \
 
 #endif
