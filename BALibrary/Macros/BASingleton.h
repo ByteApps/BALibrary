@@ -13,20 +13,20 @@
     + (className*)sharedInstance;
 
 #define defineSingletonClass(className) \
-    className *_sharedInstance; \
+    className *_sharedInstance##className = nil; \
     \
     + (void)load \
     { \
-        _sharedInstance = [className new]; \
+        _sharedInstance##className = [className new]; \
     } \
     \
     + (className*)sharedInstance \
     { \
-        return  _sharedInstance; \
+        return  _sharedInstance##className; \
     } \
-    - (id)retain { return  _sharedInstance; } \
+    - (id)retain { return  _sharedInstance##className; } \
     - (oneway void)release {} \
-    - (id)autorelease { return  _sharedInstance; } \
+    - (id)autorelease { return  _sharedInstance##className; } \
     - (NSUInteger)retainCount { return NSUIntegerMax; }
 
 #endif
