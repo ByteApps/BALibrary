@@ -121,6 +121,10 @@ Pod::Spec.new do |s|
   s.subspec 'Macros' do |s5|
         s5.source_files = "BALibrary/Macros/*.{h,m}"
   end
+  
+  s.subspec 'Utilities' do |s6|
+        s6.source_files = "BALibrary/Utilities/*.{h,m}"
+  end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
