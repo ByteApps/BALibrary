@@ -66,6 +66,8 @@
 		B966201119974495000FF5F7 /* UIView+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B966200F19974495000FF5F7 /* UIView+BAExtension.m */; };
 		B9773F181998A57900B4D8C7 /* MKMapItem+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */; };
 		B9773F191998A57900B4D8C7 /* MKMapItem+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */; };
+		B9C30576199FCC6600DAE37C /* BALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C30575199FCC6600DAE37C /* BALocationManager.m */; };
+		B9C30577199FCC6600DAE37C /* BALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C30575199FCC6600DAE37C /* BALocationManager.m */; };
 		B9D12C8E19908D6E00576BAF /* NSOperationQueue+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D12C8D19908D6E00576BAF /* NSOperationQueue+BAExtension.m */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +164,9 @@
 		B966200F19974495000FF5F7 /* UIView+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BAExtension.m"; sourceTree = "<group>"; };
 		B9773F161998A57900B4D8C7 /* MKMapItem+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapItem+BAExtension.h"; sourceTree = "<group>"; };
 		B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapItem+BAExtension.m"; sourceTree = "<group>"; };
+		B9C30574199FCC6600DAE37C /* BALocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALocationManager.h; sourceTree = "<group>"; };
+		B9C30575199FCC6600DAE37C /* BALocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BALocationManager.m; sourceTree = "<group>"; };
+		B9C30578199FCC9200DAE37C /* BAUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BAUtilities.h; sourceTree = "<group>"; };
 		B9D12C8C19908D6E00576BAF /* NSOperationQueue+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+BAExtension.h"; sourceTree = "<group>"; };
 		B9D12C8D19908D6E00576BAF /* NSOperationQueue+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+BAExtension.m"; sourceTree = "<group>"; };
 		B9D52B641998478F00DADCA9 /* BALibrary.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BALibrary.podspec; sourceTree = "<group>"; };
@@ -241,6 +246,7 @@
 				B9029928198E06C3003B250E /* BALibrary.h */,
 				B902992A198E06C3003B250E /* BALibrary.m */,
 				B9D12C8F19909C8900576BAF /* Views */,
+				B9C30573199FCC6600DAE37C /* Utilities */,
 				B9029966198E0A54003B250E /* Conversions */,
 				B9029949198E0702003B250E /* Extensions */,
 				B902996B198E0B2C003B250E /* Macros */,
@@ -360,6 +366,16 @@
 				B9661FDB199734AA000FF5F7 /* BALibraryiOSTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9C30573199FCC6600DAE37C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B9C30578199FCC9200DAE37C /* BAUtilities.h */,
+				B9C30574199FCC6600DAE37C /* BALocationManager.h */,
+				B9C30575199FCC6600DAE37C /* BALocationManager.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B9D12C8F19909C8900576BAF /* Views */ = {
@@ -492,6 +508,7 @@
 				B9029961198E0702003B250E /* UIButton+BAExtension.m in Sources */,
 				B902995F198E0702003B250E /* NSString+BAExtension.m in Sources */,
 				B9029969198E0A54003B250E /* Distance+BAConversion.m in Sources */,
+				B9C30576199FCC6600DAE37C /* BALocationManager.m in Sources */,
 				B9661FC919973462000FF5F7 /* BASearchBar.m in Sources */,
 				B902995D198E0702003B250E /* MKMapView+BAExtension.m in Sources */,
 				B9773F181998A57900B4D8C7 /* MKMapItem+BAExtension.m in Sources */,
@@ -527,6 +544,7 @@
 				B9661FDE199734AA000FF5F7 /* AppDelegate.m in Sources */,
 				B9661FFF1997350D000FF5F7 /* BASearchBar.m in Sources */,
 				B966200D19973A68000FF5F7 /* BALibrary.m in Sources */,
+				B9C30577199FCC6600DAE37C /* BALocationManager.m in Sources */,
 				B966200419973A5D000FF5F7 /* BAInputAlert.m in Sources */,
 				B966200619973A5D000FF5F7 /* MKMapView+BAExtension.m in Sources */,
 				B966201119974495000FF5F7 /* UIView+BAExtension.m in Sources */,
