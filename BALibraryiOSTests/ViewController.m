@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
 
-    _baDropdownItems = [[NSArray arrayWithObjects:@"First", @"Second", @"Third", nil] retain];
+    _baDropdownItems = [@[@[@"First", @"Second", @"Third"],@[@"Forth", @"Fifth", @"Sixth"]] retain];
 
     _baDropdown.listener = self;
 }
@@ -43,7 +43,7 @@
     }
     else //if (tableView == _baDropdown)
     {
-        return _baDropdownItems.count;
+        return [_baDropdownItems[section] count];
     }
 }
 
@@ -60,10 +60,15 @@
 
     if (tableView == _baDropdown)
     {
-        cell.textLabel.text = _baDropdownItems[indexPath.row];
+        cell.textLabel.text = _baDropdownItems[indexPath.section][indexPath.row];
     }
 
     return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
 }
 
 - (void)dealloc

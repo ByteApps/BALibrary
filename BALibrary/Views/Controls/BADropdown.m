@@ -11,7 +11,6 @@
 @implementation BADropdown
 {
     BOOL            _collapsed;
-    NSArray         *_allCells;
     NSMutableArray  *_indexPathsForHiddenRows;
 }
 
@@ -49,26 +48,10 @@
     [_listener release];
     _listener = listener;
 
-    [_allCells release], _allCells = nil;
-
     if (!listener)
     {
         return;
     }
-
-    //save all the cells in memory
-
-    NSInteger numberOfRows = [_listener tableView:self numberOfRowsInSection:0];
-    NSMutableArray *newCells = [NSMutableArray arrayWithCapacity:numberOfRows];
-
-    for (int i = 0; i < numberOfRows; i++)
-    {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        UITableViewCell *cell = [_listener tableView:self cellForRowAtIndexPath:indexPath];
-        [newCells addObject:cell];
-    }
-
-    _allCells = [[NSArray alloc] initWithArray:newCells];
 }
 
 - (void)setIndexPathForSelectedRow:(NSIndexPath *)indexPathForSelectedRow
@@ -94,33 +77,29 @@
     self.frame = selfFrame;
 }
 
-- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier
-{
-    //always create a new cell because we are storing them in an array.
-
-    return nil;
-}
-
-- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath
-{
-    //always create a new cell because we are storing them in an array.
-    
-    return nil;
-}
-
 - (NSArray *)indexPathsForUnselectedRows
 {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:_allCells.count-1];
+    NSMutableArray *result = [NSMutableArray array];
 
-    for (int i = 0; i < _allCells.count; i++)
+    NSInteger numberOfSections = [self numberOfSectionsInTableView:self];
+
+    for (int section = 0; section < numberOfSections; section++)
     {
-        if (_indexPathForSelectedRow.row == i)
-        {
-            continue;
-        }
+        NSInteger numberOfRows = [self tableView:self numberOfRowsInSection:section];
 
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [result addObject:indexPath];
+        for (int row = 0; row < numberOfRows; row++)
+        {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+
+            if (indexPath.row == 0 && indexPath.section == 0)
+            {
+                //skip first row since this is already shown in the collapsed state
+
+                continue;
+            }
+
+            [result addObject:indexPath];
+        }
     }
 
     return [NSArray arrayWithArray:result];
@@ -139,6 +118,18 @@
              //need to update before calling reloadData
 
              [tableView beginUpdates];
+
+             //first insert sections
+
+             NSInteger numberOfSections = [self numberOfSectionsInTableView:self];
+             if (numberOfSections > 1)
+             {
+                 NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, numberOfSections-1)];
+                 [tableView insertSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
+             }
+
+             //now insert the rows
+
              [tableView insertRowsAtIndexPaths:[self indexPathsForUnselectedRows] withRowAnimation:UITableViewRowAnimationFade];
              [tableView endUpdates];
 
@@ -151,14 +142,35 @@
     {
         [_indexPathForSelectedRow release];
         _indexPathForSelectedRow = [indexPath retain];
-        _collapsed = YES;
+
 
         //animation
 
         [UIView animateWithDuration:0.3 animations:^
         {
             [tableView beginUpdates];
-            [tableView deleteRowsAtIndexPaths:[self indexPathsForUnselectedRows] withRowAnimation:UITableViewRowAnimationFade];
+
+            //first delete sections
+            NSInteger numberOfSections = [self numberOfSectionsInTableView:self];
+            if (numberOfSections > 1)
+            {
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, numberOfSections-1)];
+                [tableView deleteSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
+            }
+
+            //delete all rows except the first one because this one is going to be used in the colapsed view to show current value
+            
+            NSMutableArray *indexPaths = [NSMutableArray arrayWithArray:self.indexPathsForVisibleRows];
+            [indexPaths removeObjectAtIndex:0];
+
+            [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+
+            //set _collapsed after calling indexPathsForUnselectedRows and before calling endUpdates
+            //indexPathsForUnselectedRows calls the listener methods
+            //endUpdates calls the number of rows to verify that the data has been updated.
+
+            _collapsed = YES;
+            
             [tableView endUpdates];
         }
         completion:^(BOOL finished)
@@ -188,7 +200,7 @@
     }
     else
     {
-        return _allCells.count;
+        return [_listener tableView:self numberOfRowsInSection:section];
     }
 }
 
@@ -199,29 +211,62 @@
     if (_collapsed)
     {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        UITableViewCell *cell = _allCells[_indexPathForSelectedRow.row];
-        return cell;
+        return [_listener tableView:self cellForRowAtIndexPath:_indexPathForSelectedRow];
     }
     else
     {
-        UITableViewCell *cell = _allCells[indexPath.row];
-
-        if (indexPath.row == _indexPathForSelectedRow.row)
+        if ([indexPath isEqual:_indexPathForSelectedRow])
         {
             [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
         }
 
-        return cell;
+        return [_listener tableView:self cellForRowAtIndexPath:indexPath];
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    /* Currently only handles 1 section,
-     * will handle more in the future where it shows 1 section without header when is collapsed.
-     */
 
-    return 1;
+    if (_collapsed || ![_listener respondsToSelector:@selector(numberOfSectionsInTableView:)])
+    {
+        return 1;
+    }
+
+    return [_listener numberOfSectionsInTableView:tableView];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (_collapsed)
+    {
+        return nil;
+    }
+    else
+    {
+        if (![_listener respondsToSelector:@selector(tableView:titleForHeaderInSection:)])
+        {
+            return nil;
+        }
+
+        return [_listener tableView:self titleForHeaderInSection:section];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (_collapsed)
+    {
+        return nil;
+    }
+    else
+    {
+        if (![_listener respondsToSelector:@selector(tableView:titleForFooterInSection:)])
+        {
+            return nil;
+        }
+
+        return [_listener tableView:self titleForFooterInSection:section];
+    }
 }
 
 - (void)dealloc
@@ -229,7 +274,6 @@
     self.listener = nil;
     [_indexPathsForHiddenRows release];
     [_indexPathForSelectedRow release];
-    [_allCells release];
 
     [super dealloc];
 }
