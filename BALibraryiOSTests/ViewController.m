@@ -71,6 +71,11 @@
     return 2;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Section %ld", section];
+}
+
 - (void)dealloc
 {
     [_baDropdown release];
