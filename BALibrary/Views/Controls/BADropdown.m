@@ -38,6 +38,7 @@
 {
     _collapsed = YES;
     _indexPathForSelectedRow = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
+    self.scrollEnabled = NO;
     self.delegate = self;
     self.dataSource = self;
 }
@@ -67,14 +68,24 @@
 {
     [super layoutSubviews];
 
+    //just in case if the parent viewController has self.automaticallyAdjustsScrollViewInsets = YES;
+
+    if (self.contentOffset.y != 0)
+    {
+        self.contentOffset = CGPointZero;
+    }
+
     [self shrinkFrameToContentSize];
 }
 
 - (void)shrinkFrameToContentSize
 {
-    CGRect selfFrame = self.frame;
-    selfFrame.size = self.contentSize;
-    self.frame = selfFrame;
+    if (self.frame.size.height != self.contentSize.height)
+    {
+        CGRect selfFrame = self.frame;
+        selfFrame.size = self.contentSize;
+        self.frame = selfFrame;
+    }
 }
 
 - (NSArray *)indexPathsForUnselectedRows
@@ -267,6 +278,16 @@
 
         return [_listener tableView:self titleForFooterInSection:section];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (![_listener respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)])
+    {
+        return 44;//default size
+    }
+
+    return [_listener tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 - (void)dealloc
