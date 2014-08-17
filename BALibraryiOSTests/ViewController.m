@@ -8,12 +8,23 @@
 
 #import "ViewController.h"
 
+#define SEARCHBAR_TAG (1)
+
 @implementation ViewController
+{
+
+    IBOutlet BADropdown *_baDropdown;
+
+    NSArray             *_baDropdownItems;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    _baDropdownItems = [[NSArray arrayWithObjects:@"First", @"Second", @"Third", nil] retain];
+
+    _baDropdown.listener = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,7 +37,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 100;
+    if (tableView.tag == SEARCHBAR_TAG)
+    {
+        return 100;
+    }
+    else //if (tableView == _baDropdown)
+    {
+        return _baDropdownItems.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -38,7 +56,21 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"] autorelease];
     }
 
+    cell.textLabel.text = @"";
+
+    if (tableView == _baDropdown)
+    {
+        cell.textLabel.text = _baDropdownItems[indexPath.row];
+    }
+
     return cell;
 }
 
+- (void)dealloc
+{
+    [_baDropdown release];
+    [_baDropdownItems release];
+
+    [super dealloc];
+}
 @end

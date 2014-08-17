@@ -10,5 +10,6 @@
 #define BALibrary_BAControls_h
 
 #import "BASearchBar.h"
+#import "BADropdown.h"
 
 #endif
