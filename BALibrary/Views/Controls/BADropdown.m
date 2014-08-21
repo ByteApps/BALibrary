@@ -94,7 +94,7 @@
 
     NSInteger numberOfSections = [self numberOfSectionsInTableView:self];
 
-    for (int section = 0; section < numberOfSections; section++)
+    for (int section = 1; section < numberOfSections; section++)
     {
         NSInteger numberOfRows = [self tableView:self numberOfRowsInSection:section];
 
@@ -102,12 +102,12 @@
         {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
 
-            if (indexPath.row == 0 && indexPath.section == 0)
-            {
-                //skip first row since this is already shown in the collapsed state
-
-                continue;
-            }
+//            if (indexPath.row == 0 && indexPath.section == 0)
+//            {
+//                //skip first row since this is already shown in the collapsed state
+//
+//                continue;
+//            }
 
             [result addObject:indexPath];
         }
@@ -130,7 +130,7 @@
 
              [tableView beginUpdates];
 
-             //first insert sections
+             //first insert sections, other than section 0
 
              NSInteger numberOfSections = [self numberOfSectionsInTableView:self];
              if (numberOfSections > 1)
@@ -151,17 +151,14 @@
     }
     else
     {
-        [_indexPathForSelectedRow release];
-        _indexPathForSelectedRow = [indexPath retain];
-
-
         //animation
 
         [UIView animateWithDuration:0.3 animations:^
         {
             [tableView beginUpdates];
 
-            //first delete sections
+            //first delecte sections, other than section 0
+
             NSInteger numberOfSections = [self numberOfSectionsInTableView:self];
             if (numberOfSections > 1)
             {
@@ -191,12 +188,27 @@
             [self reloadData];
         }];
 
+        if (indexPath.section == 0)
+        {
+            //don't forward the didSelectRowAtIndexPath action when tapping section 0, since th elistener doens't know about it
+
+            return;
+        }
+
+        //listener doesn't know about the first section, so substract one section.
+
+        NSIndexPath *forwardIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
+
+        //save the last selected item after we have verified its not section 0
+
+        [_indexPathForSelectedRow release];
+        _indexPathForSelectedRow = [forwardIndexPath retain];
 
         //only forward didSelectRowAtIndexPath when selecting an item
 
         if ([_listener respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
         {
-            [_listener tableView:self didSelectRowAtIndexPath:indexPath];
+            [_listener tableView:self didSelectRowAtIndexPath:forwardIndexPath];
         }
     }
 }
@@ -205,79 +217,121 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_collapsed)
+    if (section == 0)
     {
+        //always displays the selected item
+
         return 1;
     }
-    else
+
+    if (_collapsed)
     {
-        return [_listener tableView:self numberOfRowsInSection:section];
+        //when collapsed we don't show any rows
+
+        return 0;
     }
+
+    //listener doesn't know about the first section, so substract one section.
+
+    section--;
+
+    return [_listener tableView:self numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //selects the _indexPathForSelectedRow when not collapsed and removes selection when collapsed
-
-    if (_collapsed)
+    if (indexPath.section == 0)
     {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        //displays selected item
+
         return [_listener tableView:self cellForRowAtIndexPath:_indexPathForSelectedRow];
     }
-    else
-    {
-        if ([indexPath isEqual:_indexPathForSelectedRow])
-        {
-            [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        }
 
-        return [_listener tableView:self cellForRowAtIndexPath:indexPath];
+    //listener doesn't know about the first section, so substract one section.
+
+    NSIndexPath *forwardIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
+
+    //cellForRowAtIndexPath is not going to get called when collapsed by any other section other than 0
+
+    if ([forwardIndexPath isEqual:_indexPathForSelectedRow])
+    {
+        [tableView selectRowAtIndexPath:forwardIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
+
+    return [_listener tableView:self cellForRowAtIndexPath:forwardIndexPath];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    int numberOfSections = 1;// section 0 is always shown.
 
-    if (_collapsed || ![_listener respondsToSelector:@selector(numberOfSectionsInTableView:)])
+    if (_collapsed)
     {
-        return 1;
+        return numberOfSections;
     }
 
-    return [_listener numberOfSectionsInTableView:tableView];
+    if ([_listener respondsToSelector:@selector(numberOfSectionsInTableView:)])
+    {
+        numberOfSections += [_listener numberOfSectionsInTableView:tableView];
+    }
+
+    return numberOfSections;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (_collapsed)
+    if (section == 0)
     {
+        //don't show title for section 0
+
         return nil;
     }
-    else
-    {
+
+    //listener doesn't know about the first section, so substract one section.
+
+    section--;
+
+//    if (_collapsed)
+//    {
+//        return nil;
+//    }
+//    else
+//    {
         if (![_listener respondsToSelector:@selector(tableView:titleForHeaderInSection:)])
         {
             return nil;
         }
 
         return [_listener tableView:self titleForHeaderInSection:section];
-    }
+//    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    if (_collapsed)
+    if (section == 0)
     {
+        //don't show footer for section 0
+
         return nil;
     }
-    else
-    {
+
+    //listener doesn't know about the first section, so substract one section.
+
+    section--;
+
+//    if (_collapsed)
+//    {
+//        return nil;
+//    }
+//    else
+//    {
         if (![_listener respondsToSelector:@selector(tableView:titleForFooterInSection:)])
         {
             return nil;
         }
 
         return [_listener tableView:self titleForFooterInSection:section];
-    }
+//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -287,7 +341,11 @@
         return 44;//default size
     }
 
-    return [_listener tableView:tableView heightForRowAtIndexPath:indexPath];
+    //listener doesn't know about the first section, so substract one section.
+
+    NSIndexPath *forwardIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
+
+    return [_listener tableView:tableView heightForRowAtIndexPath:forwardIndexPath];
 }
 
 - (void)dealloc

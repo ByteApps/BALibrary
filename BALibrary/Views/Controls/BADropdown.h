@@ -10,12 +10,15 @@
 
 /* BADropdown
  *
- * Widget that simulates a dropdown list, collapsing it sef when selecting an object,
+ * Widget that simulates a dropdown list, collapsing it self when selecting a cell,
  * the initial state is collapsed.
  *
  * listener should implement UITableViewDelegate and UITableViewDataSource
  * don't set self.delegate to somethign else, this object sets its delegate to itself.
  * if you don't set something to indexPathForSelectedRow it will default to [0,0].
+ *
+ * it internally uses section 0 for displaying the current item.
+ *
  */
 
 @interface BADropdown : UITableView <UITableViewDelegate, UITableViewDataSource>
