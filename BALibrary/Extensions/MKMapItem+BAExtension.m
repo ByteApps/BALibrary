@@ -33,6 +33,23 @@
 
  */
 
+- (NSString *)name
+{
+    NSString *name = self.placemark.name;
+
+    if (!name)
+    {
+        return @"";
+    }
+
+    return name;
+}
+
+- (NSString *)fullAddress
+{
+    return [NSString stringWithFormat:@"%@, %@ %@, %@ %@", self.fullStreetAddress, self.city, self.state, self.countryCode, self.postalCode];
+}
+
 - (NSString *)fullStreetAddress
 {
     return [NSString stringWithFormat:@"%@ %@", self.streetNumber, self.streetAddress];
@@ -40,32 +57,74 @@
 
 - (NSString *)streetNumber
 {
-    return self.placemark.subThoroughfare;
+    NSString *result = self.placemark.subThoroughfare;
+
+    if (!result)
+    {
+        return @"";
+    }
+
+    return result;
 }
 
 - (NSString *)streetAddress;
 {
-    return self.placemark.thoroughfare;
+    NSString *result = self.placemark.thoroughfare;
+
+    if (!result)
+    {
+        return @"";
+    }
+
+    return result;
 }
 
 - (NSString *)city
 {
-    return self.placemark.locality;
+    NSString *result = self.placemark.locality;
+
+    if (!result)
+    {
+        return @"";
+    }
+
+    return result;
 }
 
 - (NSString *)state
 {
-    return self.placemark.administrativeArea;
+    NSString *result = self.placemark.administrativeArea;
+
+    if (!result)
+    {
+        return @"";
+    }
+
+    return result;
 }
 
 - (NSString *)postalCode
 {
-    return self.placemark.postalCode;
+    NSString *result = self.placemark.postalCode;
+
+    if (!result)
+    {
+        return @"";
+    }
+
+    return result;
 }
 
 - (NSString *)countryCode
 {
-    return self.placemark.ISOcountryCode;
+    NSString *result = self.placemark.ISOcountryCode;
+
+    if (!result)
+    {
+        return @"";
+    }
+
+    return result;
 }
 
 @end

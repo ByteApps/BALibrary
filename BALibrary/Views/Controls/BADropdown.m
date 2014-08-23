@@ -274,6 +274,12 @@
     {
         numberOfSections += [_listener numberOfSectionsInTableView:tableView];
     }
+    else
+    {
+        //when numberOfSectionsInTableView is not implemented by the viewController, it means they only want one section.
+        
+        numberOfSections++;
+    }
 
     return numberOfSections;
 }

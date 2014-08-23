@@ -11,5 +11,6 @@
 @interface UIView (BAExtension)
 
 - (UIView *)viewWithClass:(Class)aClass; //recursive search. includes self
+- (NSArray *)viewsWithClass:(Class)aClass; //recursive search. includes self
 
 @end

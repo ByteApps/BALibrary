@@ -12,6 +12,9 @@
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
+@property (nonatomic, readonly) NSString    *name;
+
+@property (nonatomic, readonly) NSString    *fullAddress;
 @property (nonatomic, readonly) NSString    *fullStreetAddress;
 @property (nonatomic, readonly) NSString    *streetNumber;
 @property (nonatomic, readonly) NSString    *streetAddress;

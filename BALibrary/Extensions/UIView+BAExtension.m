@@ -30,4 +30,23 @@
     return nil;
 }
 
+- (NSArray *)viewsWithClass:(Class)aClass
+{
+    NSMutableArray *result = [NSMutableArray array];
+
+    if ([self isKindOfClass:aClass])
+    {
+        [result addObject:self];
+    }
+
+    for(UIView *subView in self.subviews)
+    {
+        NSMutableArray *subviews = (id)[subView viewsWithClass:aClass];
+
+        [result addObjectsFromArray:subviews];
+    }
+
+    return result;
+}
+
 @end
