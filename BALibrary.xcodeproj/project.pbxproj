@@ -66,6 +66,8 @@
 		B966201119974495000FF5F7 /* UIView+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B966200F19974495000FF5F7 /* UIView+BAExtension.m */; };
 		B9773F181998A57900B4D8C7 /* MKMapItem+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */; };
 		B9773F191998A57900B4D8C7 /* MKMapItem+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */; };
+		B978BFEB19A93D7C00B1E363 /* UIAlertView+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B978BFEA19A93D7C00B1E363 /* UIAlertView+BAExtension.m */; };
+		B978BFEC19A93D7C00B1E363 /* UIAlertView+BAExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B978BFEA19A93D7C00B1E363 /* UIAlertView+BAExtension.m */; };
 		B9C30576199FCC6600DAE37C /* BALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C30575199FCC6600DAE37C /* BALocationManager.m */; };
 		B9C30577199FCC6600DAE37C /* BALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C30575199FCC6600DAE37C /* BALocationManager.m */; };
 		B9C30590199FE77600DAE37C /* BADropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C3058F199FE77600DAE37C /* BADropdown.m */; };
@@ -166,6 +168,8 @@
 		B966200F19974495000FF5F7 /* UIView+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BAExtension.m"; sourceTree = "<group>"; };
 		B9773F161998A57900B4D8C7 /* MKMapItem+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapItem+BAExtension.h"; sourceTree = "<group>"; };
 		B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapItem+BAExtension.m"; sourceTree = "<group>"; };
+		B978BFE919A93D7C00B1E363 /* UIAlertView+BAExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BAExtension.h"; sourceTree = "<group>"; };
+		B978BFEA19A93D7C00B1E363 /* UIAlertView+BAExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BAExtension.m"; sourceTree = "<group>"; };
 		B9C30574199FCC6600DAE37C /* BALocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALocationManager.h; sourceTree = "<group>"; };
 		B9C30575199FCC6600DAE37C /* BALocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BALocationManager.m; sourceTree = "<group>"; };
 		B9C30578199FCC9200DAE37C /* BAUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BAUtilities.h; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				B966200F19974495000FF5F7 /* UIView+BAExtension.m */,
 				B9773F161998A57900B4D8C7 /* MKMapItem+BAExtension.h */,
 				B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */,
+				B978BFE919A93D7C00B1E363 /* UIAlertView+BAExtension.h */,
+				B978BFEA19A93D7C00B1E363 /* UIAlertView+BAExtension.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				B902995D198E0702003B250E /* MKMapView+BAExtension.m in Sources */,
 				B9773F181998A57900B4D8C7 /* MKMapItem+BAExtension.m in Sources */,
 				B9662002199739F3000FF5F7 /* UISearchBar+BAExtension.m in Sources */,
+				B978BFEB19A93D7C00B1E363 /* UIAlertView+BAExtension.m in Sources */,
 				B902992B198E06C3003B250E /* BALibrary.m in Sources */,
 				B9029962198E0702003B250E /* UIImage+BAExtension.m in Sources */,
 				B902995C198E0702003B250E /* CLLocation+BAExtension.m in Sources */,
@@ -551,6 +558,7 @@
 				B9661FDE199734AA000FF5F7 /* AppDelegate.m in Sources */,
 				B9661FFF1997350D000FF5F7 /* BASearchBar.m in Sources */,
 				B966200D19973A68000FF5F7 /* BALibrary.m in Sources */,
+				B978BFEC19A93D7C00B1E363 /* UIAlertView+BAExtension.m in Sources */,
 				B9C30577199FCC6600DAE37C /* BALocationManager.m in Sources */,
 				B9C30591199FE77600DAE37C /* BADropdown.m in Sources */,
 				B966200419973A5D000FF5F7 /* BAInputAlert.m in Sources */,

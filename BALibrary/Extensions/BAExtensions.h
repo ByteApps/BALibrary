@@ -20,5 +20,6 @@
 #import "NSOperationQueue+BAExtension.h"
 #import "UISearchBar+BAExtension.h"
 #import "MKMapItem+BAExtension.h"
+#import "UIAlertView+BAExtension.h"
 
 #endif
