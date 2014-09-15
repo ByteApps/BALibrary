@@ -27,8 +27,10 @@
     alertTextField.placeholder = placeholder;
     alertTextField.delegate = inputAlert;
     alertTextField.text = defaultText;
-    
-    inputAlert->_block = [block retain];
+
+    //use Block_copy, Reference http://stackoverflow.com/questions/2659072/copying-blocks-ie-copying-them-to-instance-variables-in-objective-c
+
+    inputAlert->_block = Block_copy(block);
     
     [inputAlert->_alertView show];
 }
@@ -56,7 +58,7 @@
 
 - (void)dealloc
 {
-    [_block release];
+    Block_release(_block);
     [_alertView release];
 
     [super dealloc];
