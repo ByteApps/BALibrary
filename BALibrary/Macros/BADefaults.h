@@ -43,6 +43,9 @@
 #define declareDefaultsFloatProperty(name) \
     declareDefaultsProperty(float, name)
 
+#define declareDefaultsStringProperty(name) \
+    declareDefaultsProperty(NSString *, name)
+
 #define defineDefaultsBoolReadOnlyProperty(name, defaultValue) \
     - (BOOL)name \
     { \
@@ -97,7 +100,7 @@
     }
 
 #define defineDefaultsFloatProperty(name, defaultValue)\
-    -(float)name { \
+    - (float)name { \
         id object = [defaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return [object floatValue]; \
@@ -105,6 +108,18 @@
     -(void)set##name:(float)value \
     { \
         [defaults setFloat:value forKey:@#name]; \
+        [defaults synchronize]; \
+    }
+
+#define defineDefaultsStringProperty(name, defaultValue)\
+    - (NSString *)name { \
+        id object = [defaults objectForKey:@#name]; \
+        if (!object) return defaultValue; \
+        return object; \
+    } \
+    - (void)set##name:(NSString *)value \
+    { \
+        [defaults setObject:value forKey:@#name]; \
         [defaults synchronize]; \
     }
 
