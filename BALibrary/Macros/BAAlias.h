@@ -9,8 +9,8 @@
 #ifndef BALibrary_Alias_h
 #define BALibrary_Alias_h
 
-#define defaults [NSUserDefaults standardUserDefaults]
-#define notifications [NSNotificationCenter defaultCenter]
+#define UserDefaults        [NSUserDefaults standardUserDefaults]
+#define NotificationCenter  [NSNotificationCenter defaultCenter]
 
 #define Bit(x)  (1<<x)
 

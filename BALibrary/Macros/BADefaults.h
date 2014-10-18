@@ -49,7 +49,7 @@
 #define defineDefaultsBoolReadOnlyProperty(name, defaultValue) \
     - (BOOL)name \
     { \
-        id object = [defaults objectForKey:@#name]; \
+        id object = [UserDefaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return [object boolValue]; \
     }
@@ -62,65 +62,65 @@
     @dynamic name; \
     - (type)name \
     { \
-        id object = [defaults objectForKey:@#name]; \
+        id object = [UserDefaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return (type)[object intValue]; \
     } \
     - (void)set##name:(type)newValue \
     { \
-        [defaults setInteger:newValue forKey:@#name]; \
-        [defaults synchronize]; \
+        [UserDefaults setInteger:newValue forKey:@#name]; \
+        [UserDefaults synchronize]; \
     } \
 
 #define defineDefaultsBoolProperty(name, defaultValue) \
     @dynamic name; \
     - (BOOL)name \
     { \
-        id object = [defaults objectForKey:@#name]; \
+        id object = [UserDefaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return [object boolValue]; \
     } \
     - (void)set##name:(BOOL)newValue \
     { \
-        [defaults setBool:newValue forKey:@#name]; \
-        [defaults synchronize]; \
+        [UserDefaults setBool:newValue forKey:@#name]; \
+        [UserDefaults synchronize]; \
     } \
 
 #define defineDefaultsUInt64Property(name, defaultValue)\
     - (UInt64)name \
     { \
-        id object = [defaults objectForKey:@#name]; \
+        id object = [UserDefaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return [object unsignedLongLongValue]; \
     } \
     - (void)set##name:(UInt64)value \
     { \
-        [defaults setObject:[NSNumber numberWithUnsignedLongLong:value] forKey:@#name]; \
-        [defaults synchronize]; \
+        [UserDefaults setObject:[NSNumber numberWithUnsignedLongLong:value] forKey:@#name]; \
+        [UserDefaults synchronize]; \
     }
 
 #define defineDefaultsFloatProperty(name, defaultValue)\
     - (float)name { \
-        id object = [defaults objectForKey:@#name]; \
+        id object = [UserDefaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return [object floatValue]; \
     } \
     -(void)set##name:(float)value \
     { \
-        [defaults setFloat:value forKey:@#name]; \
-        [defaults synchronize]; \
+        [UserDefaults setFloat:value forKey:@#name]; \
+        [UserDefaults synchronize]; \
     }
 
 #define defineDefaultsStringProperty(name, defaultValue)\
     - (NSString *)name { \
-        id object = [defaults objectForKey:@#name]; \
+        id object = [UserDefaults objectForKey:@#name]; \
         if (!object) return defaultValue; \
         return object; \
     } \
     - (void)set##name:(NSString *)value \
     { \
-        [defaults setObject:value forKey:@#name]; \
-        [defaults synchronize]; \
+        [UserDefaults setObject:value forKey:@#name]; \
+        [UserDefaults synchronize]; \
     }
 
 #endif
