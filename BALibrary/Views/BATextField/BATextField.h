@@ -22,6 +22,7 @@
 
 @property (nonatomic, assign) id<UITextFieldDelegate> delegate;
 
-@property (nonatomic, copy) NSString *mask; //Example: (XXX) XXX-XXXX
+@property (nonatomic, copy)     NSString *mask; //Example: (XXX) XXX-XXXX
+@property (nonatomic, readonly) NSString *unmaskedText;
 
 @end

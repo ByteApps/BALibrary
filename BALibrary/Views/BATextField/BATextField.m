@@ -160,6 +160,25 @@
     return NO;
 }
 
+- (NSString *)unmaskedText
+{
+    NSString *text = self.text;
+    NSMutableString *resultText = [NSMutableString string];
+
+    for (int i = 0; i < text.length; i++)
+    {
+        unichar charAtText = [text characterAtIndex:i];
+        unichar charAtMask = [_mask characterAtIndex:i];
+
+        if (charAtMask == 'x' || charAtMask == 'X')
+        {
+            [resultText appendFormat:@"%C", charAtText];
+        }
+    }
+
+    return resultText;
+}
+
 - (BOOL)textFieldShouldClear:(UITextField *)textField
 {
     if ([_externalDelegate respondsToSelector:@selector(textFieldShouldClear:)])
