@@ -21,6 +21,7 @@
 @interface BATextField : UITextField <UITextFieldDelegate>
 
 @property (nonatomic, assign) id<UITextFieldDelegate> delegate;
-@property (nonatomic, copy) NSString *mask;
+
+@property (nonatomic, copy) NSString *mask; //Example: (XXX) XXX-XXXX
 
 @end
