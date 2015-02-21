@@ -9,6 +9,8 @@
 #ifndef BALibrary_BAViews_h
 #define BALibrary_BAViews_h
 
-#import "BAControls.h"
+#import "BADropdown.h"
+#import "BASearchBar.h"
+#import "BATextField.h"
 
 #endif

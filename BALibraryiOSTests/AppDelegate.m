@@ -7,12 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+#if 0 //TODO: Fix BASearchBar and BADropdown for AutoLayout
+    self.window = [[[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds] autorelease];
+    self.window.rootViewController = [[MainViewController new] autorelease];
+    [self.window makeKeyAndVisible];
+#endif
+    
     return YES;
 }
 							

@@ -103,11 +103,7 @@ Pod::Spec.new do |s|
   #####################################
   
   s.subspec 'Views' do |s2|
-    s2.source_files = "BALibrary/Views/*.{h,m}"
-    
-    s2.subspec 'Controls' do |s21|
-        s21.source_files = "BALibrary/Views/Controls/*.{h,m}"
-    end
+    s2.source_files = "BALibrary/Views/**/*.{h,m}"
   end
   
   s.subspec 'Conversions' do |s3|

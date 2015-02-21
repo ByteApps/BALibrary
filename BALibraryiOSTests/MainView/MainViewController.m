@@ -1,22 +1,38 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  BALibraryiOSTests
 //
 //  Created by Salvador Guerrero on 8/9/14.
 //  Copyright (c) 2014 ByteApps. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
+#import "MainView.h"
 
 #define SEARCHBAR_TAG (1)
 
-@implementation ViewController
+@implementation MainViewController
 {
+    BASearchBar *_baSearcBar;
+    IBOutlet BADropdown  *_baDropdown;
+    IBOutlet BATextField *_baTextField;
 
-    IBOutlet BADropdown *_baDropdown;
-
-    NSArray             *_baDropdownItems;
+    NSArray     *_baDropdownItems;
 }
+
+#if 0 //TODO: Fix BASearchBar and BADropdown for AutoLayout
+- (void)loadView
+{
+    MainView *view = [[MainView new] autorelease];
+
+    //set references
+
+    _baSearcBar = view.baSearcBar;
+    _baDropdown = view.baDropdown;
+
+    self.view = view;
+}
+#endif
 
 - (void)viewDidLoad
 {
@@ -25,6 +41,9 @@
     _baDropdownItems = [@[@[@"First", @"Second", @"Third"],@[@"Forth", @"Fifth", @"Sixth"]] retain];
 
     _baDropdown.listener = self;
+
+    _baTextField.mask = @"(xxx) xxx-xxxx";
+    _baTextField.placeholder = _baTextField.mask;
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,6 +100,7 @@
     [_baDropdown release];
     [_baDropdownItems release];
 
+    [_baTextField release];
     [super dealloc];
 }
 @end

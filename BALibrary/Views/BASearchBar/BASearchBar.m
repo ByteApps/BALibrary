@@ -72,6 +72,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+
     //set semitransparent background
 
     self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
@@ -187,6 +189,7 @@
 + (instancetype) realSearchBarFromTextField:(UITextField *)textField
 {
     BARealSearchBar *searchBar = [[[BARealSearchBar alloc] initWithFrame:textField.frame] autorelease];
+    searchBar.translatesAutoresizingMaskIntoConstraints = textField.translatesAutoresizingMaskIntoConstraints;
     UITextField *searchBarTextField = searchBar.textField;
 
     //copy relevant properties.

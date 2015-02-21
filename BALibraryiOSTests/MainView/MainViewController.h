@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  BALibraryiOSTests
 //
 //  Created by Salvador Guerrero on 8/9/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @end
