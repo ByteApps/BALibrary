@@ -236,7 +236,7 @@
         _headerControl = [UIControl new];
         _headerControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [_headerControl addTarget:tableView action:@selector(headerTapped:) forControlEvents:UIControlEventTouchUpInside];
-        _headerControl.backgroundColor = UIColor.greenColor;
+        _headerControl.backgroundColor = UIColor.whiteColor;
     }
     else
     {
@@ -253,7 +253,7 @@
     if (!view)
     {
         view = [[UIView new] autorelease];
-        view.backgroundColor = UIColor.yellowColor;
+        view.backgroundColor = UIColor.clearColor;
 
         UILabel *label = [[UILabel new] autorelease];
         label.translatesAutoresizingMaskIntoConstraints = NO;
