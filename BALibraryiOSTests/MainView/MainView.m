@@ -17,20 +17,20 @@
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.backgroundColor = UIColor.redColor;
 
-        _baSearcBar = [[BASearchBar new] autorelease];
-        _baSearcBar.translatesAutoresizingMaskIntoConstraints = NO;
-        _baSearcBar.tag = 1;
-        [self addSubview:_baSearcBar];
+//        _baSearcBar = [[BASearchBar new] autorelease];
+//        _baSearcBar.translatesAutoresizingMaskIntoConstraints = NO;
+//        _baSearcBar.tag = 1;
+//        [self addSubview:_baSearcBar];
 
-        _baDropdown = [[BADropdown new] autorelease];
+        _baDropdown = [[BAIntrinsicDropdown new] autorelease];
         _baDropdown.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:_baDropdown];
 
-        NSDictionary *bindings = NSDictionaryOfVariableBindings(_baSearcBar, _baDropdown);
+        NSDictionary *bindings = NSDictionaryOfVariableBindings(_baDropdown);
 
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_baSearcBar]-|" options:0 metrics:nil views:bindings]];
+//        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_baSearcBar]-|" options:0 metrics:nil views:bindings]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_baDropdown]-|" options:0 metrics:nil views:bindings]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_baSearcBar]-[_baDropdown(>=0)]-|" options:0 metrics:nil views:bindings]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[_baDropdown]-(>=0)-|" options:0 metrics:nil views:bindings]];
     }
 
     return self;

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E32E8CF1A9EEB970017D154 /* BAIntrinsicTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E8CE1A9EEB970017D154 /* BAIntrinsicTableView.m */; };
+		3E32E8D01A9EEE0E0017D154 /* BAIntrinsicTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E8CE1A9EEB970017D154 /* BAIntrinsicTableView.m */; };
+		3E32E8D41A9EF1A70017D154 /* BAIntrinsicDropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E8D31A9EF1A70017D154 /* BAIntrinsicDropdown.m */; };
+		3E32E8D51A9EF1A70017D154 /* BAIntrinsicDropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E8D31A9EF1A70017D154 /* BAIntrinsicDropdown.m */; };
 		3EFCE1221A984CF8009659EC /* BADropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCE11E1A984CF8009659EC /* BADropdown.m */; };
 		3EFCE1231A984CF8009659EC /* BADropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCE11E1A984CF8009659EC /* BADropdown.m */; };
 		3EFCE1241A984CF8009659EC /* BASearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCE1211A984CF8009659EC /* BASearchBar.m */; };
@@ -117,6 +121,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E32E8CD1A9EEB970017D154 /* BAIntrinsicTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAIntrinsicTableView.h; path = BAIntrinsicTableView/BAIntrinsicTableView.h; sourceTree = "<group>"; };
+		3E32E8CE1A9EEB970017D154 /* BAIntrinsicTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAIntrinsicTableView.m; path = BAIntrinsicTableView/BAIntrinsicTableView.m; sourceTree = "<group>"; };
+		3E32E8D21A9EF1A70017D154 /* BAIntrinsicDropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAIntrinsicDropdown.h; path = BAIntrinsicDropdown/BAIntrinsicDropdown.h; sourceTree = "<group>"; };
+		3E32E8D31A9EF1A70017D154 /* BAIntrinsicDropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAIntrinsicDropdown.m; path = BAIntrinsicDropdown/BAIntrinsicDropdown.m; sourceTree = "<group>"; };
 		3EFCE11D1A984CF8009659EC /* BADropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BADropdown.h; sourceTree = "<group>"; };
 		3EFCE11E1A984CF8009659EC /* BADropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BADropdown.m; sourceTree = "<group>"; };
 		3EFCE1201A984CF8009659EC /* BASearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASearchBar.h; sourceTree = "<group>"; };
@@ -221,6 +229,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E32E8CC1A9EEB5F0017D154 /* BAIntrinsicTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3E32E8CD1A9EEB970017D154 /* BAIntrinsicTableView.h */,
+				3E32E8CE1A9EEB970017D154 /* BAIntrinsicTableView.m */,
+			);
+			name = BAIntrinsicTableView;
+			sourceTree = "<group>";
+		};
+		3E32E8D11A9EF17A0017D154 /* BAIntrinsicDropdown */ = {
+			isa = PBXGroup;
+			children = (
+				3E32E8D21A9EF1A70017D154 /* BAIntrinsicDropdown.h */,
+				3E32E8D31A9EF1A70017D154 /* BAIntrinsicDropdown.m */,
+			);
+			name = BAIntrinsicDropdown;
+			sourceTree = "<group>";
+		};
 		3EFCE11C1A984CF8009659EC /* BADropdown */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				B9D52B651998482A00DADCA9 /* BAViews.h */,
+				3E32E8D11A9EF17A0017D154 /* BAIntrinsicDropdown */,
+				3E32E8CC1A9EEB5F0017D154 /* BAIntrinsicTableView */,
 				3EFCE1261A984D54009659EC /* BATextField */,
 				3EFCE11C1A984CF8009659EC /* BADropdown */,
 				3EFCE11F1A984CF8009659EC /* BASearchBar */,
@@ -565,6 +593,8 @@
 				3EFCE1241A984CF8009659EC /* BASearchBar.m in Sources */,
 				B902995C198E0702003B250E /* CLLocation+BAExtension.m in Sources */,
 				B902995E198E0702003B250E /* NSData+BAExtension.m in Sources */,
+				3E32E8CF1A9EEB970017D154 /* BAIntrinsicTableView.m in Sources */,
+				3E32E8D41A9EF1A70017D154 /* BAIntrinsicDropdown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B966200519973A5D000FF5F7 /* CLLocation+BAExtension.m in Sources */,
+				3E32E8D01A9EEE0E0017D154 /* BAIntrinsicTableView.m in Sources */,
 				B966200B19973A5D000FF5F7 /* UISearchBar+BAExtension.m in Sources */,
 				B966200719973A5D000FF5F7 /* NSData+BAExtension.m in Sources */,
 				3EFCE1341A984E7D009659EC /* MainView.m in Sources */,
@@ -590,6 +621,7 @@
 				B966200C19973A65000FF5F7 /* Distance+BAConversion.m in Sources */,
 				B966200819973A5D000FF5F7 /* NSString+BAExtension.m in Sources */,
 				B9661FDE199734AA000FF5F7 /* AppDelegate.m in Sources */,
+				3E32E8D51A9EF1A70017D154 /* BAIntrinsicDropdown.m in Sources */,
 				B966200D19973A68000FF5F7 /* BALibrary.m in Sources */,
 				B978BFEC19A93D7C00B1E363 /* UIAlertView+BAExtension.m in Sources */,
 				B9C30577199FCC6600DAE37C /* BALocationManager.m in Sources */,

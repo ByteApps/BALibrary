@@ -12,5 +12,7 @@
 #import "BADropdown.h"
 #import "BASearchBar.h"
 #import "BATextField.h"
+#import "BAIntrinsicTableView.h"
+#import "BAIntrinsicDropdown.h"
 
 #endif

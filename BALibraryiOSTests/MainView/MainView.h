@@ -11,6 +11,6 @@
 @interface MainView : UIView
 
 @property (nonatomic, readonly) BASearchBar *baSearcBar;
-@property (nonatomic, readonly) BADropdown  *baDropdown;
+@property (nonatomic, readonly) BAIntrinsicDropdown  *baDropdown;
 
 @end

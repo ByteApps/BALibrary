@@ -14,13 +14,13 @@
 @implementation MainViewController
 {
     BASearchBar *_baSearcBar;
-    IBOutlet BADropdown  *_baDropdown;
+    IBOutlet BAIntrinsicDropdown  *_baDropdown;
     IBOutlet BATextField *_baTextField;
 
     NSArray     *_baDropdownItems;
 }
 
-#if 0 //TODO: Fix BASearchBar and BADropdown for AutoLayout
+//#if 0 //TODO: Fix BASearchBar and BADropdown for AutoLayout
 - (void)loadView
 {
     MainView *view = [[MainView new] autorelease];
@@ -29,10 +29,12 @@
 
     _baSearcBar = view.baSearcBar;
     _baDropdown = view.baDropdown;
+    _baDropdown.title = @"Select One: ";
+    _baDropdown.allowsMultipleSelection = NO;
 
     self.view = view;
 }
-#endif
+//#endif
 
 - (void)viewDidLoad
 {
@@ -40,7 +42,8 @@
 
     _baDropdownItems = [@[@[@"First", @"Second", @"Third"],@[@"Forth", @"Fifth", @"Sixth"]] retain];
 
-    _baDropdown.listener = self;
+    _baDropdown.dataSource = self;
+    _baDropdown.delegate = self;
 
     _baTextField.mask = @"(xxx) xxx-xxxx";
     _baTextField.placeholder = _baTextField.mask;
@@ -94,6 +97,11 @@
 {
     return [NSString stringWithFormat:@"Section %ld", section];
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 70;
+//}
 
 - (void)dealloc
 {
