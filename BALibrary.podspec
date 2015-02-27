@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BALibrary"
-  s.version      = "0.0.2"
+  s.version      = "0.0.4"
   s.summary      = "ByteApps BALibrary."
 
   s.description  = <<-DESC
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "git@github.com:modprobe/BALibrary.git", :tag => "0.0.2" }
+  s.source       = { :git => "git@github.com:modprobe/BALibrary.git", :tag => "0.0.4" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
