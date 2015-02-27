@@ -90,47 +90,6 @@
     return title;
 }
 
-#if 0 // Not needed for now
-{
-
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-{
-
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-    
-}
-
-}
-#endif
-
 #pragma mark - UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,18 +109,29 @@
         [CATransaction begin];
         [CATransaction setCompletionBlock:^
          {
-             // animation has finished
+             //CATransaction is used to add a completion block when deleteRowsAtIndexPaths animation finishes.
 
-             [self invalidateIntrinsicContentSize];
+             [UIView animateWithDuration:0.3 animations:^
+             {
+                 //update the header.
+
+                 [self tableView:self viewForHeaderInSection:0];
+             }];
          }];
+
+        [tableView beginUpdates];
 
         _collapsed = YES;
 
-        [tableView beginUpdates];
-        [tableView deleteRowsAtIndexPaths:tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationAutomatic];
-        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self invalidateIntrinsicContentSize];
+
+        [UIView animateWithDuration:0.3 animations:^
+         {
+             [self layoutIfNeeded];
+         }];
+
+        [tableView deleteRowsAtIndexPaths:self.indexPathsForAllRows withRowAnimation:UITableViewRowAnimationAutomatic];
         [tableView endUpdates];
-        
         [CATransaction commit];
     }
 }
@@ -176,55 +146,84 @@
     [_selectedIndexPaths removeObject:indexPath];
 }
 
+- (NSArray *)indexPathsForAllRows
+{
+    NSInteger rowCount = [_externalDataSource tableView:self numberOfRowsInSection:0];
+    NSMutableArray *allIndexPaths = [NSMutableArray arrayWithCapacity:rowCount];
+
+    for (int i = 0; i < rowCount; i++)
+    {
+        [allIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+    }
+
+    return allIndexPaths;
+}
+
 - (void)headerTapped:(UIControl *)control
 {
-    _collapsed = !_collapsed;
-
-    [CATransaction begin];
-    [CATransaction setCompletionBlock:^
-     {
-         // animation has finished
-
-         [self invalidateIntrinsicContentSize];
-
-         //select the previous selected cells
-
-         if (!_collapsed && _selectedIndexPaths.count)
-         {
-             for (int i = 0; i < _selectedIndexPaths.count; i++)
-             {
-                 [self selectRowAtIndexPath:_selectedIndexPaths[i] animated:NO scrollPosition:UITableViewScrollPositionNone];
-             }
-         }
-     }];
-
-    [self beginUpdates];
-
-    if (!_collapsed)//checking for old value
+    if (_collapsed)
     {
+        //doing the frame animation first so the table draws all the visible cells
+
+        _collapsed = !_collapsed;
+
+        //invalidate the table's intrinsic size
+
+        [self invalidateIntrinsicContentSize];
+
+        [UIView animateWithDuration:0.3 animations:^
+        {
+            //animate the resize
+
+            [self layoutIfNeeded];
+        }];
+
         //add rows
 
-        NSInteger numberOfRows = [_externalDataSource tableView:self numberOfRowsInSection:0];
-        NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:numberOfRows];
-
-        for (int i = 0; i < numberOfRows; i++)
+        [self beginUpdates];
         {
-            [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-        }
+            NSInteger numberOfRows = [_externalDataSource tableView:self numberOfRowsInSection:0];
+            NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:numberOfRows];
 
-        [self insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+            }
+
+            [self insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+        [self endUpdates];
+
+        //select the previously selected cells
+
+        if (_selectedIndexPaths.count)
+        {
+            for (int i = 0; i < _selectedIndexPaths.count; i++)
+            {
+                [self selectRowAtIndexPath:_selectedIndexPaths[i] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            }
+        }
     }
     else
     {
-        [_selectedIndexPaths removeAllObjects];
-        [_selectedIndexPaths addObjectsFromArray:self.indexPathsForSelectedRows];
+        //when collapsing we need to do everything inside the update block
+        //so we can see the row animation plus the frame animation.
 
-        [self deleteRowsAtIndexPaths:self.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self beginUpdates];
+        {
+            _collapsed = !_collapsed;
+
+            [self invalidateIntrinsicContentSize];
+
+            [UIView animateWithDuration:0.3 animations:^
+             {
+                 [self layoutIfNeeded];
+             }];
+
+            [self deleteRowsAtIndexPaths:self.indexPathsForAllRows withRowAnimation:UITableViewRowAnimationTop];
+        }
+        [self endUpdates];
     }
-
-    [self endUpdates];
-
-    [CATransaction commit];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -292,78 +291,6 @@
 
     return 45;
 }
-
-#if 0 // Not Needed for now
-{
-    - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
-    - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section NS_AVAILABLE_IOS(6_0);
-    - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section NS_AVAILABLE_IOS(6_0);
-    - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath NS_AVAILABLE_IOS(6_0);
-    - (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section NS_AVAILABLE_IOS(6_0);
-    - (void)tableView:(UITableView *)tableView didEndDisplayingFooterView:(UIView *)view forSection:(NSInteger)section NS_AVAILABLE_IOS(6_0);
-
-    // Variable height support
-
-    - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-    - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
-
-    // Use the estimatedHeight methods to quickly calcuate guessed values which will allow for fast load times of the table.
-    // If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready to be displayed, so more expensive logic can be placed there.
-    - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0);
-    - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section NS_AVAILABLE_IOS(7_0);
-    - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section NS_AVAILABLE_IOS(7_0);
-
-    // Section header & footer information. Views are preferred over title should you decide to provide both
-
-    - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;   // custom view for footer. will be adjusted to default or specified footer height
-
-    // Accessories (disclosures).
-
-    - (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath NS_DEPRECATED_IOS(2_0, 3_0);
-    - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath;
-
-    // Selection
-
-    // -tableView:shouldHighlightRowAtIndexPath: is called when a touch comes down on a row.
-    // Returning NO to that message halts the selection process and does not cause the currently selected row to lose its selected look while the touch is down.
-    - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0);
-    - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0);
-    - (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0);
-
-    // Called before the user changes the selection. Return a new indexPath, or nil, to change the proposed selection.
-    - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath;
-    - (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0);
-
-    // Editing
-
-    // Allows customization of the editingStyle for a particular cell located at 'indexPath'. If not implemented, all editable cells will have UITableViewCellEditingStyleDelete set for them when the table has editing property set to YES.
-    - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath;
-    - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0);
-    - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0); // supercedes -tableView:titleForDeleteConfirmationButtonForRowAtIndexPath: if return value is non-nil
-
-    // Controls whether the background is indented while editing.  If not implemented, the default is YES.  This is unrelated to the indentation level below.  This method only applies to grouped style table views.
-    - (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath;
-
-    // The willBegin/didEnd methods are called whenever the 'editing' property is automatically changed by the table (allowing insert/delete/move). This is done by a swipe activating a single row
-    - (void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath;
-    - (void)tableView:(UITableView*)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath;
-
-    // Moving/reordering
-
-    // Allows customization of the target row for a particular row as it is being moved/reordered
-    - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath;
-
-    // Indentation
-
-    - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath; // return 'depth' of row for hierarchies
-
-    // Copy/Paste.  All three methods must be implemented by the delegate.
-
-    - (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(5_0);
-    - (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender NS_AVAILABLE_IOS(5_0);
-    - (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender NS_AVAILABLE_IOS(5_0);
-}
-#endif
 
 - (void)dealloc
 {
