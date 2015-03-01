@@ -129,10 +129,12 @@
         _collapsed = YES;
 
         [self invalidateIntrinsicContentSize];
+        [[self superview] invalidateIntrinsicContentSize];
 
         [UIView animateWithDuration:0.3 animations:^
          {
              [self layoutIfNeeded];
+             [[self superview] layoutIfNeeded];
          }];
 
         [tableView deleteRowsAtIndexPaths:self.indexPathsForAllRows withRowAnimation:UITableViewRowAnimationAutomatic];
