@@ -57,6 +57,13 @@
     return CGSizeMake(super.contentSize.width, height * [_externalDataSource tableView:self numberOfRowsInSection:0]);
 }
 
+- (void)deselectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated
+{
+    [super deselectRowAtIndexPath:indexPath animated:animated];
+
+    [self tableView:self didDeselectRowAtIndexPath:indexPath];
+}
+
 #pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
