@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A0E8A2EEA4FC1703EDA1CCF308406D2A5C0AC89B</key>
-		<string>github.com:modprobe/BALibrary.git</string>
+		<string>github.com:ByteApps/BALibrary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BALibrary.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:modprobe/BALibrary.git</string>
+	<string>github.com:ByteApps/BALibrary.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
