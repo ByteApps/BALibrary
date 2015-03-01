@@ -136,12 +136,11 @@
         _collapsed = YES;
 
         [self invalidateIntrinsicContentSize];
-        [[self superview] invalidateIntrinsicContentSize];
 
         [UIView animateWithDuration:0.3 animations:^
          {
              [self layoutIfNeeded];
-             [[self superview] layoutIfNeeded];
+             [self layoutIfNeededAllSuperViews];
          }];
 
         [tableView deleteRowsAtIndexPaths:self.indexPathsForAllRows withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -184,14 +183,13 @@
         //invalidate the table's intrinsic size
 
         [self invalidateIntrinsicContentSize];
-        [[self superview] invalidateIntrinsicContentSize];
 
         [UIView animateWithDuration:0.3 animations:^
         {
             //animate the resize
 
             [self layoutIfNeeded];
-            [[self superview] layoutIfNeeded];
+            [self layoutIfNeededAllSuperViews];
         }];
 
         //add rows
@@ -230,12 +228,11 @@
             _collapsed = !_collapsed;
 
             [self invalidateIntrinsicContentSize];
-            [[self superview] invalidateIntrinsicContentSize];
 
             [UIView animateWithDuration:0.3 animations:^
              {
                  [self layoutIfNeeded];
-                 [[self superview] layoutIfNeeded];
+                 [self layoutIfNeededAllSuperViews];
              }];
 
             [self deleteRowsAtIndexPaths:self.indexPathsForAllRows withRowAnimation:UITableViewRowAnimationTop];

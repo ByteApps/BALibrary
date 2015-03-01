@@ -363,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				B902994A198E0702003B250E /* BAExtensions.h */,
+				B966200E19974495000FF5F7 /* UIView+BAExtension.h */,
+				B966200F19974495000FF5F7 /* UIView+BAExtension.m */,
 				B9D12C8C19908D6E00576BAF /* NSOperationQueue+BAExtension.h */,
 				B9D12C8D19908D6E00576BAF /* NSOperationQueue+BAExtension.m */,
 				B902994B198E0702003B250E /* BAInputAlert.h */,
@@ -381,8 +383,6 @@
 				B902995A198E0702003B250E /* UIImage+BAExtension.m */,
 				B9662000199739F3000FF5F7 /* UISearchBar+BAExtension.h */,
 				B9662001199739F3000FF5F7 /* UISearchBar+BAExtension.m */,
-				B966200E19974495000FF5F7 /* UIView+BAExtension.h */,
-				B966200F19974495000FF5F7 /* UIView+BAExtension.m */,
 				B9773F161998A57900B4D8C7 /* MKMapItem+BAExtension.h */,
 				B9773F171998A57900B4D8C7 /* MKMapItem+BAExtension.m */,
 				B978BFE919A93D7C00B1E363 /* UIAlertView+BAExtension.h */,

@@ -49,4 +49,15 @@
     return result;
 }
 
+- (void)layoutIfNeededAllSuperViews
+{
+    UIView *superview = self.superview;
+
+    while (superview)
+    {
+        [superview layoutIfNeeded];
+        superview = superview.superview;
+    }
+}
+
 @end
