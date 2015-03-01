@@ -78,6 +78,11 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    if ([_externalDataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)])
+    {
+        return [_externalDataSource tableView:tableView titleForHeaderInSection:section];
+    }
+
     NSMutableString *title = [NSMutableString stringWithString:_title?_title:@""];
 
     if (!self.allowsMultipleSelection && _selectedIndexPaths.count)
@@ -170,12 +175,14 @@
         //invalidate the table's intrinsic size
 
         [self invalidateIntrinsicContentSize];
+        [[self superview] invalidateIntrinsicContentSize];
 
         [UIView animateWithDuration:0.3 animations:^
         {
             //animate the resize
 
             [self layoutIfNeeded];
+            [[self superview] layoutIfNeeded];
         }];
 
         //add rows
@@ -214,10 +221,12 @@
             _collapsed = !_collapsed;
 
             [self invalidateIntrinsicContentSize];
+            [[self superview] invalidateIntrinsicContentSize];
 
             [UIView animateWithDuration:0.3 animations:^
              {
                  [self layoutIfNeeded];
+                 [[self superview] layoutIfNeeded];
              }];
 
             [self deleteRowsAtIndexPaths:self.indexPathsForAllRows withRowAnimation:UITableViewRowAnimationTop];
@@ -259,7 +268,7 @@
         label.backgroundColor = UIColor.clearColor;
         label.textColor = UIColor.blackColor;
         label.textAlignment = NSTextAlignmentLeft;
-        label.text = [self tableView:self titleForHeaderInSection:0];
+        label.text = [self tableView:self titleForHeaderInSection:section];
         label.adjustsFontSizeToFitWidth = YES;
         [view addSubview:label];
 
@@ -287,6 +296,16 @@
     if ([_externalDelegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)])
     {
         return [_externalDelegate tableView:tableView heightForHeaderInSection:section];
+    }
+
+    return 45;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([_externalDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)])
+    {
+        return [_externalDelegate tableView:self heightForRowAtIndexPath:indexPath];
     }
 
     return 45;
