@@ -6,7 +6,7 @@
 //
 //
 
-@interface BAInputAlert : NSObject <UIAlertViewDelegate, UITextFieldDelegate>
+@interface BAInputAlert : UIAlertView <UIAlertViewDelegate, UITextFieldDelegate>
 
 + (void)showInputAlertWithTitle:(NSString *)title
                         message:(NSString *)message

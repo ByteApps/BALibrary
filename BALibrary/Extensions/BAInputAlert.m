@@ -8,39 +8,36 @@
 
 #import "BAInputAlert.h"
 
+@interface BAInputAlert ()
+@property (nonatomic, copy) void(^completionBlock)(NSString* text, NSInteger buttonIndex);
+@end
+
 @implementation BAInputAlert
-{
-    void(^_block)(NSString* text, NSInteger buttonIndex);
-    UIAlertView *_alertView;
-}
 
 + (void)showInputAlertWithTitle:(NSString *)title message:(NSString *)message defaultText:(NSString *)defaultText placeholder:(NSString *)placeholder otherButtonTitle:(NSString *)otherButtonTitle onDismiss:(void(^)(NSString *text, NSInteger buttonIndex))block
 {
-    BAInputAlert *inputAlert = [BAInputAlert new];
-    
-    inputAlert->_alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:inputAlert cancelButtonTitle:@"Cancel" otherButtonTitles:otherButtonTitle, nil];
-    inputAlert->_alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    BAInputAlert *inputAlert = [[[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:otherButtonTitle, nil] autorelease];
+    inputAlert.delegate = inputAlert;
+    inputAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
 
-    UITextField * alertTextField = [inputAlert->_alertView textFieldAtIndex:0];
-    alertTextField.keyboardType = UIKeyboardTypeDefault;
-    alertTextField.clearButtonMode = UITextFieldViewModeAlways;
-    alertTextField.placeholder = placeholder;
-    alertTextField.delegate = inputAlert;
-    alertTextField.text = defaultText;
+    UITextField * textField = [inputAlert textFieldAtIndex:0];
+    textField.keyboardType = UIKeyboardTypeDefault;
+    textField.clearButtonMode = UITextFieldViewModeAlways;
+    textField.placeholder = placeholder;
+    textField.delegate = inputAlert;
+    textField.text = defaultText;
 
     //use Block_copy, Reference http://stackoverflow.com/questions/2659072/copying-blocks-ie-copying-them-to-instance-variables-in-objective-c
 
-    inputAlert->_block = Block_copy(block);
+    inputAlert.completionBlock = block;
     
-    [inputAlert->_alertView show];
+    [inputAlert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *textFromTextField = [alertView textFieldAtIndex:0].text;
-    _block(textFromTextField, buttonIndex);
-
-    [self autorelease];
+    self.completionBlock(textFromTextField, buttonIndex);
 }
 
 
@@ -48,18 +45,15 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    _block(textField.text, _alertView.firstOtherButtonIndex);
-    [_alertView dismissWithClickedButtonIndex:0 animated:YES];
-
-    [self autorelease];
+    self.completionBlock(textField.text, self.firstOtherButtonIndex);
+    [self dismissWithClickedButtonIndex:0 animated:YES];
 
     return YES;
 }
 
 - (void)dealloc
 {
-    Block_release(_block);
-    [_alertView release];
+    self.completionBlock = nil;
 
     [super dealloc];
 }
