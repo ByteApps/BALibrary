@@ -9,9 +9,8 @@
 #import "BATextField.h"
 
 @implementation BATextField
-{
-    id<UITextFieldDelegate> _externalDelegate;
-}
+
+@synthesize delegate = _externalDelegate;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

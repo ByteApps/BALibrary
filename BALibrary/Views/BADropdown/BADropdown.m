@@ -14,6 +14,8 @@
     NSMutableArray  *_indexPathsForHiddenRows;
 }
 
+@synthesize indexPathForSelectedRow = _indexPathForSelectedRow;
+
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame]))
